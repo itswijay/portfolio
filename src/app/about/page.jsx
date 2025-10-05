@@ -2,7 +2,7 @@ import AnimatedText from '@/components/AnimatedText'
 import FuturisticImage from '@/components/FuturisticImage'
 import Layout from '@/components/Layout'
 import Head from 'next/head'
-// import Skills from '@/components/Skills'
+import Skills from '@/components/Skills'
 // import Experiences from '@/components/Experiences'
 // import Education from '@/components/Education'
 import AnimatedNumbers from '@/components/AnimateNumbers'
@@ -59,9 +59,9 @@ const about = () => {
               </div>
             </div>
           </div>
-          {/* <Skills />
-          <Experiences />
-          <Education /> */}
+          <Skills />
+          {/*<Experiences />
+          <Education />*/}
         </Layout>
       </main>
     </>
