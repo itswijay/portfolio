@@ -19,13 +19,13 @@ const LiIcon = ({ reference }) => {
           cx="75"
           cy="50"
           r="20"
-          className="stroke-primary stroke-1 fill-none"
+          className="stroke-muted-foreground/30 stroke-1 fill-none"
         />
         <motion.circle
           cx="75"
           cy="50"
           r="20"
-          className="stroke-[5px] fill-background transition-colors duration-300"
+          className="stroke-primary stroke-[5px] fill-none transition-colors duration-300"
           style={{
             pathLength: scrollYProgress,
           }}
@@ -34,7 +34,7 @@ const LiIcon = ({ reference }) => {
           cx="75"
           cy="50"
           r="10"
-          className="animate-pulse stroke-1 fill-primary"
+          className="animate-pulse stroke-1 fill-primary/20 stroke-primary"
         />
       </svg>
     </figure>
