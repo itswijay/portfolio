@@ -5,6 +5,7 @@ import Logo from './Logo'
 import { GitHubIcon, LinkedinIcon } from './Icons'
 import { motion, AnimatePresence } from 'framer-motion'
 import { usePathname } from 'next/navigation'
+import { ThemeToggle } from './ThemeToggle'
 
 const SidebarLink = ({
   href,
@@ -161,7 +162,7 @@ const NavBar = () => {
           </motion.a>
 
           <div className="hidden md:block">
-            {/* <ThemeToggle /> */}
+            <ThemeToggle />
           </div>
 
           {/* Hamburger Menu - Mobile Only */}

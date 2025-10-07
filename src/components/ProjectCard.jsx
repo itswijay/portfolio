@@ -40,7 +40,7 @@ const ProjectCard = ({
       <Link
         href={link}
         target="_blank"
-        className="w-full cursor-pointer overflow-hidden rounded-t-2xl relative block"
+        className="w-full cursor-pointer overflow-hidden rounded-2xl relative block"
       >
         <motion.div
           whileHover={{ scale: 1.05 }}

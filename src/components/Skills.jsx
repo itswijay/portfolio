@@ -167,11 +167,12 @@ const Skills = () => {
                 whileTap={{ scale: 0.98 }}
               >
                 <span className="relative z-10 block px-6 py-2 bg-card/80 backdrop-blur-sm text-card-foreground rounded-full text-sm font-medium border border-border/50 cursor-pointer transition-all duration-300 group-hover:text-primary group-hover:border-primary/50 group-hover:shadow-lg group-hover:shadow-primary/10">
+                  
                   {/* Background gradient on hover */}
-                  <span className="absolute inset-0 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
+                  <span className="absolute inset-0 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
 
                   {/* Shimmer effect */}
-                  <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                  <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out bg-gradient-to-r from-transparent via-primary/10 to-transparent rounded-full" />
 
                   <span className="relative z-10">{skill}</span>
                 </span>

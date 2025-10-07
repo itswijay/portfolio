@@ -1,28 +1,29 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
-import dynamic from 'next/dynamic'
-
-// Dynamically import motion to avoid SSR issues
-const MotionDiv = dynamic(
-  () => import('framer-motion').then((mod) => mod.motion.div),
-  { ssr: false }
-)
+import React, { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import { useTheme } from 'next-themes'
 
 const Logo = () => {
-//   const { theme } = useTheme()
-//   const logoSrc =
-//     theme === 'light' ? '/logos/wijaytb.png' : '/logos/wijaytw.png'
+  const { theme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const logoSrc =
+    mounted && theme === 'light' ? '/logos/wijaytb.png' : '/logos/wijaytw.png'
 
   return (
     <div className="flex items-center justify-center">
-      <MotionDiv
+      <motion.div
         whileHover={{ scale: 1.15 }}
         className="relative block w-10 h-10 md:w-12 md:h-12 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-primary/20"
       >
         <Link href="/" className="relative block w-full h-full">
           <Image
-            src='/logos/wijaytb.png'
+            src={logoSrc}
             alt="Logo"
             fill
             className="object-contain transition-opacity duration-200 hover:opacity-90"
@@ -30,7 +31,7 @@ const Logo = () => {
             priority
           />
         </Link>
-      </MotionDiv>
+      </motion.div>
     </div>
   )
 }

@@ -3,6 +3,7 @@ import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import PageLoader from "@/components/PageLoader";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,16 +27,24 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <PageLoader>
-          <NavBar />
-          {children}
-          <Footer/>
-        </PageLoader>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={true}
+          disableTransitionOnChange={false}
+          storageKey="theme"
+        >
+          <PageLoader>
+            <NavBar />
+            {children}
+            <Footer />
+          </PageLoader>
+        </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }
