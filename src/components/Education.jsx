@@ -26,7 +26,7 @@ const Details = ({
         className="w-full bg-card rounded-lg shadow-lg p-6 border border-border/20 hover:shadow-xl transition-all duration-300"
       >
         <div className="mb-4">
-          <h3 className="capitalize font-bold text-2xl text-card-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+          <h3 className="capitalize font-bold text-2xl text-card-foreground/85 mb-2 group-hover:text-darken transition-colors duration-300">
             {degree}
           </h3>
           <div className="flex items-center gap-2 mb-2">

@@ -21,13 +21,13 @@ const projects = () => {
           <div className="grid grid-cols-12 gap-24">
             <div className="col-span-12">
               <FeaturedProjectCard
-                type="Web App"
-                title="GPA Calculator"
-                summary="A lightweight web app that lets university students calculate GPA instantly. Auto-loads courses based on degree & semester with data stored locally in browser."
-                img="/projects/gpa_cal.png"
-                link="https://gpacalsusl.vercel.app"
-                github="https://github.com/itswijay/gpa-calculator"
-                index={0}
+                type="AI / Healthcare"
+                title="Intima"
+                summary="A conversational AI bot that provides guidance on sexual, obstetrics, and gynecology healthcare topics. Built with vector databases and OpenAI API."
+                img="/projects/intima.png"
+                link="https://intima-ai.vercel.app"
+                github="https://github.com/itswijay/intima"
+                index={1}
               />
             </div>
             <div className="col-span-6">
@@ -54,13 +54,13 @@ const projects = () => {
             </div>
             <div className="col-span-12">
               <FeaturedProjectCard
-                type="AI / Healthcare"
-                title="Intima"
-                summary="A conversational AI bot that provides guidance on sexual, obstetrics, and gynecology healthcare topics. Built with vector databases and OpenAI API."
+                type="Web App"
+                title="GPA Calculator"
+                summary="A lightweight web app that lets university students calculate GPA instantly. Auto-loads courses based on degree & semester with data stored locally in browser."
                 img="/projects/gpa_cal.png"
-                link="https://intima-ai.vercel.app"
-                github="https://github.com/itswijay/intima"
-                index={1}
+                link="https://gpacalsusl.vercel.app"
+                github="https://github.com/itswijay/gpa-calculator"
+                index={0}
               />
             </div>
             <div className="col-span-6">
