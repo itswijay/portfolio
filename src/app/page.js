@@ -2,7 +2,7 @@ import Layout from '@/components/Layout'
 import AnimatedText from '@/components/AnimatedText'
 import Link from 'next/link'
 import { LinkArrow } from '@/components/Icons'
-// import HireMe from '@/components/HireMe'
+import HireMe from '@/components/HireMe'
 import Image from 'next/image'
 import HomeImage from '@/components/HomeImage'
 
@@ -46,7 +46,7 @@ export default function Home() {
             </div>
           </div>
         </Layout>
-        {/* <HireMe /> */}
+        <HireMe />
       </main>
     </>
   )
