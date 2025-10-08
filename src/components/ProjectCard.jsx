@@ -76,10 +76,7 @@ const ProjectCard = ({
           {type}
         </motion.span>
 
-        <Link
-          href={link}
-          target="_blank"
-        >
+        <Link href={link} target="_blank">
           <motion.h2
             className="my-2 w-full text-left text-dark/90 text-2xl font-bold group-hover:text-darken transition-colors duration-300"
             initial={{ opacity: 0, x: -20 }}

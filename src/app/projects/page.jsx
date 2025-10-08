@@ -56,7 +56,7 @@ const projects = () => {
               <FeaturedProjectCard
                 type="Laravel / Medical Management"
                 title="MediTrack SUSL"
-                summary="Dockerized medical management system built with Laravel, MySQL and phpMyAdmin. Features automated migrations & seeding, container orchestration, and documented local & production deployment workflows."
+                summary="Dockerized medical management system for university Medical Center built with Laravel, MySQL and phpMyAdmin. Features automated migrations & seeding, container orchestration, and documented local & production deployment workflows."
                 img="/projects/meditrack.png"
                 link="#"
                 github="https://github.com/thewijay/meditrack-susl"
@@ -77,7 +77,7 @@ const projects = () => {
             <div className="col-span-6">
               <ProjectCard
                 type="AI / Productivity"
-                title="Mentora – AI Time Management Assistant"
+                title="Mentora"
                 summary="An AI-powered platform that generates personalized study/work calendars, analyzes productivity, and helps students manage time efficiently."
                 img="/projects/gpa_cal.png"
                 link="#"
