@@ -81,10 +81,10 @@ const FeaturedProjectCard = ({
         <Link
           href={link}
           target="_blank"
-          className="group/title w-full"
+          className="w-full"
         >
           <motion.h2
-            className="my-3 w-full text-left text-dark/90 text-3xl font-bold leading-tight group-hover/title:text-darken transition-colors duration-300"
+            className="mt-2 mb-2 w-full text-left text-dark/90 text-3xl font-bold leading-tight group-hover:text-darken transition-colors duration-300"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -95,7 +95,7 @@ const FeaturedProjectCard = ({
         </Link>
 
         <motion.p
-          className="my-4 font-medium text-muted-foreground text-justify leading-relaxed"
+          className="mt-2 mb-4 font-medium text-muted-foreground text-justify leading-relaxed"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

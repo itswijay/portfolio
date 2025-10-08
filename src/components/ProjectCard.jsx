@@ -79,10 +79,9 @@ const ProjectCard = ({
         <Link
           href={link}
           target="_blank"
-          className="group/title"
         >
           <motion.h2
-            className="my-2 w-full text-left text-dark/90 text-2xl font-bold group-hover/title:text-darken transition-colors duration-300"
+            className="my-2 w-full text-left text-dark/90 text-2xl font-bold group-hover:text-darken transition-colors duration-300"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
