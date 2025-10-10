@@ -1,36 +1,206 @@
 'use client'
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 
 const HomeImage = () => {
+  // Array of images for the gallery
+  const images = [
+    { src: '/images/home/1.jpg', alt: 'Pubudu Wijesundara - Profile 1' },
+    { src: '/images/home/2.jpg', alt: 'Pubudu Wijesundara - Profile 1' },
+    { src: '/images/home/3.jpg', alt: 'Pubudu Wijesundara - Profile 2' },
+    { src: '/images/home/4.jpg', alt: 'profile 3' },
+    { src: '/images/home/5.jpg', alt: 'profile 3' },
+  ]
+
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const [lastInteractionTime, setLastInteractionTime] = useState(Date.now())
+  const [isHovered, setIsHovered] = useState(false)
+
+  // Auto-play functionality
+  useEffect(() => {
+    if (!isAutoPlaying || isHovered) return // Stop if hovered
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length)
+    }, 4000)
+
+    return () => clearInterval(interval)
+  }, [isAutoPlaying, isHovered, images.length])
+
+  // Resume auto-play after 3 seconds of inactivity
+  useEffect(() => {
+    const checkInactivity = setInterval(() => {
+      if (!isAutoPlaying && Date.now() - lastInteractionTime > 3000) {
+        setIsAutoPlaying(true)
+      }
+    }, 1000)
+
+    return () => clearInterval(checkInactivity)
+  }, [isAutoPlaying, lastInteractionTime])
+
+  // Handle scroll event
+  useEffect(() => {
+    const handleWheel = (e) => {
+      if (Math.abs(e.deltaY) > 10) {
+        e.preventDefault() // Prevent page scroll
+        e.stopPropagation() // Stop event from bubbling up
+        setIsAutoPlaying(false)
+        setLastInteractionTime(Date.now())
+        if (e.deltaY > 0) {
+          // Scroll down - next image
+          setCurrentIndex((prev) => (prev + 1) % images.length)
+        } else {
+          // Scroll up - previous image
+          setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
+        }
+      }
+    }
+
+    const container = document.getElementById('image-gallery-container')
+    if (container) {
+      container.addEventListener('wheel', handleWheel, { passive: false })
+      return () => container.removeEventListener('wheel', handleWheel)
+    }
+  }, [images.length])
+
+  // Calculate position for each card
+  const getCardStyle = (index) => {
+    const diff = index - currentIndex
+    const totalCards = images.length
+
+    // Normalize difference to handle circular array
+    let normalizedDiff = diff
+    if (Math.abs(diff) > totalCards / 2) {
+      normalizedDiff = diff > 0 ? diff - totalCards : diff + totalCards
+    }
+
+    const absDiff = Math.abs(normalizedDiff)
+
+    return {
+      zIndex: totalCards - absDiff,
+      scale: 1 - absDiff * 0.16, // Progressive size reduction for all cards
+      y: -absDiff * 55, // Upward movement
+      x: -absDiff * 55, // Leftward movement
+      opacity: Math.max(0.4, 1 - absDiff * 0.12), // Keep minimum 40% opacity for all cards
+      blur: absDiff * 0.6, // Minimal blur to keep all cards clear
+      rotateY: normalizedDiff * 1.2, // Subtle rotation
+    }
+  }
+
   return (
     <motion.div
-      className="w-1/2 flex justify-center"
-      initial={{ opacity: 0, y: 20, scale: 0.98 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 5.8, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={{ scale: 1.015 }}
+      className="w-1/2 flex justify-center items-center relative"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
     >
-      <motion.div
-        animate={{ y: [0, -6, 0] }}
-        transition={{
-          duration: 7,
-          repeat: Infinity,
-          repeatType: 'mirror',
-          ease: 'easeInOut',
-        }}
+      <div
+        id="image-gallery-container"
+        className="relative w-full h-[500px] flex items-center justify-center perspective-1000"
+        style={{ perspective: '1200px' }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
-        <Image
-          className=""
-          src="/profile/profile2.png"
-          alt="Pubudu Wijesundara"
-          width={800}
-          height={800}
-          priority
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
-        />
-      </motion.div>
+        {/* Cards Stack */}
+        <div className="relative w-[450px] h-[300px]">
+          {images.map((image, index) => {
+            const style = getCardStyle(index)
+            const isActive = index === currentIndex
+
+            return (
+              <motion.div
+                key={index}
+                className="absolute top-0 left-0 w-full h-full cursor-pointer"
+                style={{ zIndex: style.zIndex }}
+                initial={false}
+                animate={{
+                  scale: style.scale,
+                  y: style.y,
+                  x: style.x,
+                  opacity: style.opacity,
+                  rotateY: style.rotateY,
+                }}
+                transition={{
+                  duration: 0.5,
+                  ease: [0.34, 1.56, 0.64, 1],
+                }}
+                onClick={
+                  isActive
+                    ? undefined
+                    : () => {
+                        setIsAutoPlaying(false)
+                        setLastInteractionTime(Date.now())
+                        setCurrentIndex(index)
+                      }
+                }
+                whileHover={isActive ? { scale: style.scale * 1.02 } : {}}
+              >
+                <div
+                  className="w-full h-full rounded-2xl overflow-hidden shadow-2xl bg-white dark:bg-gray-800"
+                  style={{
+                    filter: `blur(${style.blur}px)`,
+                    transition: 'filter 0.5s ease',
+                  }}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 500px"
+                    priority={index < 2}
+                  />
+                </div>
+              </motion.div>
+            )
+          })}
+        </div>
+
+        {/* Indicators */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex gap-2 z-50">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                setIsAutoPlaying(false)
+                setLastInteractionTime(Date.now())
+                setCurrentIndex(index)
+              }}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                index === currentIndex
+                  ? 'bg-blue-500 w-8'
+                  : 'bg-gray-400 dark:bg-gray-600 hover:bg-gray-500'
+              }`}
+              aria-label={`Go to image ${index + 1}`}
+            />
+          ))}
+        </div>
+
+        {/* Scroll Hint */}
+        <motion.div
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 text-sm text-gray-500 dark:text-gray-400 flex items-center gap-2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2, duration: 1 }}
+        >
+          <svg
+            className="w-4 h-4 animate-bounce"
+            fill="none"
+            strokeWidth="2"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"
+            />
+          </svg>
+          <span>Scroll to explore</span>
+        </motion.div>
+      </div>
     </motion.div>
   )
 }
