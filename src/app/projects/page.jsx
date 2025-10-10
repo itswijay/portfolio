@@ -46,7 +46,7 @@ const projects = () => {
                 type="Web Development"
                 title="Personal Portfolio Website"
                 summary="A modern, responsive portfolio website built with Next.js and Tailwind CSS. Features dark/light mode, project showcase, and smooth animations."
-                img="/projects/gpa_cal.png"
+                img="/projects/portfolio.png"
                 link="https://itswijay.vercel.app"
                 github="https://github.com/thewijay/portfolio"
                 index={2}
