@@ -28,7 +28,7 @@ export default function Home() {
               <div className="flex items-center self-start mt-2">
                 <Link
                   className="flex items-center bg-foreground text-background p-2 px-4 rounded-lg text-md font-semibold border-2 border-solid border-transparent hover:border-foreground hover:bg-background hover:text-foreground transition-all duration-300"
-                  href="/SE.pdf"
+                  href="/Intern_SE.pdf"
                   target="_blank"
                   download={false}
                 >
