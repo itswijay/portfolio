@@ -57,7 +57,7 @@ const projects = () => {
                 type="Laravel / Medical Management"
                 title="MediTrack SUSL"
                 summary="Dockerized medical management system for university Medical Center built with Laravel, MySQL and phpMyAdmin. Features automated migrations & seeding, container orchestration, and documented local & production deployment workflows."
-                img="/projects/meditrack.png"
+                img="/projects/medi-track.png"
                 link="#"
                 github="https://github.com/thewijay/meditrack-susl"
                 index={4}
@@ -80,7 +80,7 @@ const projects = () => {
                 title="InfoBash Tournament Manager"
                 summary="A cricket tournament management web app built with React, TypeScript, and Supabase, featuring Google OAuth, real-time updates, and a modern responsive UI with Tailwind CSS and shadcn."
                 img="/projects/info-bash.png"
-                link="https://https://infobash2025.vercel.app"
+                link="https://infobash2025.vercel.app/"
                 github="https://github.com/itswijay/Infobash-Tournament"
                 index={6}
               />

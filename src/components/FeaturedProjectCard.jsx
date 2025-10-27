@@ -17,7 +17,7 @@ const FeaturedProjectCard = ({
 }) => {
   return (
     <motion.article
-      className="w-full flex items-center justify-between rounded-3xl border border-border bg-card shadow-2xl text-card-foreground overflow-hidden group relative"
+      className="w-full h-full flex items-center justify-between rounded-3xl border border-border bg-card shadow-2xl text-card-foreground overflow-hidden group relative"
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, margin: '-100px' }}
@@ -44,17 +44,17 @@ const FeaturedProjectCard = ({
       />
 
       <motion.div
-        className="w-1/2 cursor-pointer overflow-hidden rounded-3xl relative leading-[0]"
+        className="w-1/2 h-full cursor-pointer overflow-hidden relative leading-[0]"
         whileHover={{ scale: 1.02 }}
         transition={{ duration: 0.4, ease: 'easeOut' }}
       >
-        <Link href={link} target="_blank" className="block">
+        <Link href={link} target="_blank" className="block h-full">
           <Image
             src={img}
             width={500}
             height={500}
             alt={title}
-            className="w-full h-auto block"
+            className="w-full h-full object-cover block"
             priority
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
           />
@@ -67,42 +67,40 @@ const FeaturedProjectCard = ({
         </Link>
       </motion.div>
 
-      <div className="w-1/2 flex flex-col items-start justify-between px-8 py-4 relative z-10">
-        <motion.span
-          className="text-primary font-semibold text-sm uppercase tracking-wider mb-2"
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 + index * 0.2, duration: 0.5 }}
-        >
-          ⭐ {type}
-        </motion.span>
-
-        <Link
-          href={link}
-          target="_blank"
-          className="w-full"
-        >
-          <motion.h2
-            className="mt-2 mb-2 w-full text-left text-dark/90 text-3xl font-bold leading-tight group-hover:text-darken transition-colors duration-300"
+      <div className="w-1/2 h-full flex flex-col items-start justify-between px-8 py-6 relative z-10">
+        <div>
+          <motion.span
+            className="text-primary font-semibold text-sm uppercase tracking-wider mb-2"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.4 + index * 0.2, duration: 0.5 }}
+            transition={{ delay: 0.3 + index * 0.2, duration: 0.5 }}
           >
-            {title}
-          </motion.h2>
-        </Link>
+            ⭐ {type}
+          </motion.span>
 
-        <motion.p
-          className="mt-2 mb-4 font-medium text-muted-foreground text-justify leading-relaxed"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 + index * 0.2, duration: 0.5 }}
-        >
-          {summary}
-        </motion.p>
+          <Link href={link} target="_blank" className="w-full">
+            <motion.h2
+              className="mt-2 mb-2 w-full text-left text-dark/90 text-3xl font-bold leading-tight group-hover:text-darken transition-colors duration-300"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 + index * 0.2, duration: 0.5 }}
+            >
+              {title}
+            </motion.h2>
+          </Link>
+
+          <motion.p
+            className="mt-2 mb-4 font-medium text-muted-foreground text-justify leading-relaxed"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 + index * 0.2, duration: 0.5 }}
+          >
+            {summary}
+          </motion.p>
+        </div>
 
         <motion.div
           className="mt-4 flex items-center gap-4"
