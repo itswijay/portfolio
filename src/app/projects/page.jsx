@@ -76,12 +76,12 @@ const projects = () => {
             </div>
             <div className="col-span-6">
               <ProjectCard
-                type="AI / Productivity"
-                title="Mentora"
-                summary="An AI-powered platform that generates personalized study/work calendars, analyzes productivity, and helps students manage time efficiently."
-                img="/projects/gpa_cal.png"
-                link="#"
-                github="#"
+                type="Web Application"
+                title="InfoBash Tournament Manager"
+                summary="A cricket tournament management web app built with React, TypeScript, and Supabase, featuring Google OAuth, real-time updates, and a modern responsive UI with Tailwind CSS and shadcn."
+                img="/projects/info-bash.png"
+                link="https://https://infobash2025.vercel.app"
+                github="https://github.com/itswijay/Infobash-Tournament"
                 index={6}
               />
             </div>

@@ -17,7 +17,7 @@ const ProjectCard = ({
 }) => {
   return (
     <motion.article
-      className="w-full flex flex-col items-center justify-center rounded-2xl border border-border bg-card relative shadow-2xl text-card-foreground overflow-hidden group"
+      className="w-full h-full flex flex-col rounded-2xl border border-border bg-card relative shadow-2xl text-card-foreground overflow-hidden group"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}
@@ -65,38 +65,40 @@ const ProjectCard = ({
         />
       </Link>
 
-      <div className="w-full flex flex-col items-start justify-between p-6 relative z-10">
-        <motion.span
-          className="text-primary font-medium text-sm uppercase tracking-wide"
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 + index * 0.1 }}
-        >
-          {type}
-        </motion.span>
-
-        <Link href={link} target="_blank">
-          <motion.h2
-            className="my-2 w-full text-left text-dark/90 text-2xl font-bold group-hover:text-darken transition-colors duration-300"
+      <div className="w-full flex flex-col items-start justify-between p-6 relative z-10 flex-grow">
+        <div>
+          <motion.span
+            className="text-primary font-medium text-sm uppercase tracking-wide"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.3 + index * 0.1 }}
+            transition={{ delay: 0.2 + index * 0.1 }}
           >
-            {title}
-          </motion.h2>
-        </Link>
+            {type}
+          </motion.span>
 
-        <motion.p
-          className="my-2 font-medium text-justify text-muted-foreground leading-relaxed"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 + index * 0.1 }}
-        >
-          {summary}
-        </motion.p>
+          <Link href={link} target="_blank">
+            <motion.h2
+              className="my-2 w-full text-left text-dark/90 text-2xl font-bold group-hover:text-darken transition-colors duration-300"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 + index * 0.1 }}
+            >
+              {title}
+            </motion.h2>
+          </Link>
+
+          <motion.p
+            className="my-2 font-medium text-justify text-muted-foreground leading-relaxed"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 + index * 0.1 }}
+          >
+            {summary}
+          </motion.p>
+        </div>
 
         <motion.div
           className="mt-4 flex items-center gap-4"
