@@ -3,14 +3,13 @@ import AnimatedText from '@/components/AnimatedText'
 import Link from 'next/link'
 import { LinkArrow } from '@/components/Icons'
 import HireMe from '@/components/HireMe'
-import Image from 'next/image'
 import HomeImage from '@/components/HomeImage'
 
 export default function Home() {
   return (
     <>
       <main className="flex w-full min-h-screen bg-background text-foreground m-0 p-0 transition-colors duration-300">
-        <Layout className="pt-0">
+        <Layout className="!pt-2">
           <div className="flex items-center justify-between w-full">
             <HomeImage />
             <div className="w-1/2 flex flex-col items-center self-center">

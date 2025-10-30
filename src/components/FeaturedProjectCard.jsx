@@ -17,9 +17,9 @@ const FeaturedProjectCard = ({
 }) => {
   return (
     <motion.article
-      className="w-full h-full flex items-center justify-between rounded-3xl border border-border bg-card shadow-2xl text-card-foreground overflow-hidden group relative"
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      className="w-full max-w-full h-full flex flex-col lg:flex-row items-center justify-between rounded-3xl border border-border bg-card shadow-2xl text-card-foreground overflow-hidden group relative origin-center"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}
       transition={{
         duration: 0.6,
@@ -44,19 +44,19 @@ const FeaturedProjectCard = ({
       />
 
       <motion.div
-        className="w-1/2 h-full cursor-pointer overflow-hidden relative leading-[0]"
+        className="w-full lg:w-1/2 h-full cursor-pointer overflow-hidden relative leading-[0]"
         whileHover={{ scale: 1.02 }}
         transition={{ duration: 0.4, ease: 'easeOut' }}
       >
         <Link href={link} target="_blank" className="block h-full">
           <Image
             src={img}
-            width={500}
-            height={500}
+            width={1000}
+            height={600}
             alt={title}
             className="w-full h-full object-cover block"
             priority
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+            sizes="(max-width: 1024px) 100vw, 50vw"
           />
 
           {/* Image overlay */}
@@ -67,10 +67,10 @@ const FeaturedProjectCard = ({
         </Link>
       </motion.div>
 
-      <div className="w-1/2 h-full flex flex-col items-start justify-between px-8 py-6 relative z-10">
-        <div>
+      <div className="w-full lg:w-1/2 h-full flex flex-col items-start justify-between p-4 sm:p-6 lg:px-8 lg:py-6 relative z-10">
+        <div className="w-full">
           <motion.span
-            className="text-primary font-semibold text-sm uppercase tracking-wider mb-2"
+            className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider mb-2 block"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -81,7 +81,7 @@ const FeaturedProjectCard = ({
 
           <Link href={link} target="_blank" className="w-full">
             <motion.h2
-              className="mt-2 mb-2 w-full text-left text-dark/90 text-3xl font-bold leading-tight group-hover:text-darken transition-colors duration-300"
+              className="mt-2 mb-2 w-full text-left text-dark/90 text-xl sm:text-2xl lg:text-3xl font-bold leading-tight group-hover:text-darken transition-colors duration-300"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -92,7 +92,7 @@ const FeaturedProjectCard = ({
           </Link>
 
           <motion.p
-            className="mt-2 mb-4 font-medium text-muted-foreground text-justify leading-relaxed"
+            className="mt-2 mb-4 font-medium text-muted-foreground text-sm sm:text-base text-justify leading-relaxed break-words"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -103,7 +103,7 @@ const FeaturedProjectCard = ({
         </div>
 
         <motion.div
-          className="mt-4 flex items-center gap-4"
+          className="mt-4 flex flex-wrap items-center gap-3 sm:gap-4 w-full"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -119,7 +119,7 @@ const FeaturedProjectCard = ({
               target="_blank"
               //   className="hover:text-primary transition-colors duration-300"
             >
-              <GitHubIcon className="w-9 h-9" />
+              <GitHubIcon className="w-8 h-8 sm:w-9 sm:h-9" />
             </Link>
           </motion.div>
 
@@ -128,7 +128,7 @@ const FeaturedProjectCard = ({
               whileHover={{ scale: 1.05, x: 5 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button className="font-semibold cursor-pointer px-6 py-3 text-base">
+              <Button className="font-semibold cursor-pointer px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base">
                 Visit Project
               </Button>
             </motion.div>

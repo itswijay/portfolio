@@ -11,7 +11,6 @@ const Loading = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="text-center">
-
         {/* Loading Animation */}
         <div className="flex justify-center space-x-2 mb-8">
           {[0, 1, 2].map((index) => (
@@ -32,7 +31,7 @@ const Loading = () => {
         </div>
 
         {/* Progress Bar */}
-        <div className="w-64 mx-auto">
+        <div className="w-48 sm:w-64 mx-auto px-4 sm:px-0">
           <div className="w-full bg-muted rounded-full h-1 overflow-hidden">
             <motion.div
               className="h-full bg-gradient-to-r from-primary to-primary-light"

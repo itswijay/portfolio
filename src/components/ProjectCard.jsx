@@ -17,7 +17,7 @@ const ProjectCard = ({
 }) => {
   return (
     <motion.article
-      className="w-full h-full flex flex-col rounded-2xl border border-border bg-card relative shadow-2xl text-card-foreground overflow-hidden group"
+      className="w-full max-w-full h-full flex flex-col rounded-2xl border border-border bg-card relative shadow-2xl text-card-foreground overflow-hidden group origin-center"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}
@@ -49,12 +49,12 @@ const ProjectCard = ({
         >
           <Image
             src={img}
-            width={500}
-            height={500}
+            width={800}
+            height={600}
             alt={title}
             className="w-full h-auto block"
             priority
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </motion.div>
 
@@ -65,10 +65,10 @@ const ProjectCard = ({
         />
       </Link>
 
-      <div className="w-full flex flex-col items-start justify-between p-6 relative z-10 flex-grow">
-        <div>
+      <div className="w-full flex flex-col items-start justify-between p-4 sm:p-6 relative z-10 flex-grow">
+        <div className="w-full">
           <motion.span
-            className="text-primary font-medium text-sm uppercase tracking-wide"
+            className="text-primary font-medium text-xs sm:text-sm uppercase tracking-wide block"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -79,7 +79,7 @@ const ProjectCard = ({
 
           <Link href={link} target="_blank">
             <motion.h2
-              className="my-2 w-full text-left text-dark/90 text-2xl font-bold group-hover:text-darken transition-colors duration-300"
+              className="my-2 w-full text-left text-dark/90 text-lg sm:text-xl md:text-2xl font-bold group-hover:text-darken transition-colors duration-300"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -90,7 +90,7 @@ const ProjectCard = ({
           </Link>
 
           <motion.p
-            className="my-2 font-medium text-justify text-muted-foreground leading-relaxed"
+            className="my-2 font-medium text-justify text-muted-foreground text-sm sm:text-base leading-relaxed break-words"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -101,7 +101,7 @@ const ProjectCard = ({
         </div>
 
         <motion.div
-          className="mt-4 flex items-center gap-4"
+          className="mt-4 flex flex-wrap items-center gap-3 sm:gap-4 w-full"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -116,13 +116,13 @@ const ProjectCard = ({
               target="_blank"
               //   className="hover:text-primary transition-colors duration-300"
             >
-              <GitHubIcon className="w-8 h-8" />
+              <GitHubIcon className="w-7 h-7 sm:w-8 sm:h-8" />
             </Link>
           </motion.div>
 
           <Link href={link} target="_blank">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="font-semibold cursor-pointer">
+              <Button className="font-semibold cursor-pointer text-sm sm:text-base px-4 py-2 sm:px-6 sm:py-3">
                 Visit Project
               </Button>
             </motion.div>

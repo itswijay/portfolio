@@ -13,13 +13,13 @@ const projects = () => {
         <meta name="description" content="" />
       </Head>
       <main className="w-full mb-16 flex flex-col items-center justify-center">
-        <Layout className="pt-16">
+        <Layout>
           <AnimatedText
             text="Imagination Trumps Knowledge!"
-            className="mb-16"
+            className="mb-8 sm:mb-12 md:mb-16 "
           />
-          <div className="grid grid-cols-12 gap-24">
-            <div className="col-span-12">
+          <div className="grid grid-cols-12 gap-6 sm:gap-8 md:gap-12 lg:gap-24 w-full max-w-full">
+            <div className="col-span-12 w-full max-w-full">
               <FeaturedProjectCard
                 type="AI / Healthcare"
                 title="Intima"
@@ -30,7 +30,7 @@ const projects = () => {
                 index={0}
               />
             </div>
-            <div className="col-span-6">
+            <div className="col-span-12 md:col-span-6 w-full max-w-full">
               <ProjectCard
                 type="Full-Stack"
                 title="Next.js Markdown Blog"
@@ -41,7 +41,7 @@ const projects = () => {
                 index={1}
               />
             </div>
-            <div className="col-span-6">
+            <div className="col-span-12 md:col-span-6 w-full max-w-full">
               <ProjectCard
                 type="Web Development"
                 title="Personal Portfolio Website"
@@ -52,7 +52,7 @@ const projects = () => {
                 index={2}
               />
             </div>
-            <div className="col-span-12">
+            <div className="col-span-12 w-full max-w-full">
               <FeaturedProjectCard
                 type="Laravel / Medical Management"
                 title="MediTrack SUSL"
@@ -63,7 +63,7 @@ const projects = () => {
                 index={4}
               />
             </div>
-            <div className="col-span-6">
+            <div className="col-span-12 md:col-span-6 w-full max-w-full">
               <ProjectCard
                 type="Web App"
                 title="GPA Calculator"
@@ -74,7 +74,7 @@ const projects = () => {
                 index={5}
               />
             </div>
-            <div className="col-span-6">
+            <div className="col-span-12 md:col-span-6 w-full max-w-full">
               <ProjectCard
                 type="Web Application"
                 title="InfoBash Tournament Manager"
