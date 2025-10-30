@@ -113,7 +113,7 @@ const Skills = () => {
 
                     <div className="w-full bg-muted/30 rounded-full h-2 transition-colors duration-300">
                       <motion.div
-                        className="bg-gradient-to-r from-primary to-primary-light h-2 rounded-full shadow-sm"
+                        className="bg-gradient-to-r from-white/80 to-primary-light/90 h-2 rounded-full shadow-sm"
                         initial={{ width: 0 }}
                         animate={{ width: `${tech.level}%` }}
                         transition={{
@@ -132,14 +132,14 @@ const Skills = () => {
 
         {/* Additional Skills Section */}
         <motion.div
-          className="mt-16 text-center"
+          className="mt-12 sm:mt-14 md:mt-16 text-center"
           variants={categoryVariants}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h3 className="text-2xl font-bold text-foreground mb-8 transition-colors duration-300">
+          <h3 className="text-xl sm:text-xl md:text-2xl font-bold text-foreground mb-6 sm:mb-7 md:mb-8 transition-colors duration-300">
             Additional Skills
           </h3>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-3.5 md:gap-4">
             {[
               'Problem Solving',
               'Team Leadership',
@@ -166,12 +166,12 @@ const Skills = () => {
                 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <span className="relative z-10 block px-6 py-2 bg-card/80 backdrop-blur-sm text-card-foreground rounded-full text-sm font-medium border border-border/50 cursor-pointer transition-all duration-300 group-hover:text-primary group-hover:border-primary/50 group-hover:shadow-lg group-hover:shadow-primary/10">
+                <span className="relative z-10 block px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 md:py-2 bg-card/90 backdrop-blur-sm text-card-foreground rounded-full text-xs sm:text-sm md:text-sm font-medium border border-border/60 cursor-pointer transition-all duration-300 shadow-sm group-hover:bg-primary-light/10 group-hover:text-primary-white group-hover:border-primary-light group-hover:shadow-md group-hover:shadow-primary-light/20">
                   {/* Background gradient on hover */}
-                  <span className="absolute inset-0 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
+                  <span className="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary/20 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
 
                   {/* Shimmer effect */}
-                  <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out bg-gradient-to-r from-transparent via-primary/10 to-transparent rounded-full" />
+                  <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out bg-gradient-to-r from-transparent via-primary/20 to-transparent rounded-full" />
 
                   <span className="relative z-10">{skill}</span>
                 </span>

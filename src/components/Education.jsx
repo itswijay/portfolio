@@ -16,24 +16,28 @@ const Details = ({
   return (
     <li
       ref={ref}
-      className="my-12 first:mt-0 last:mb-0 w-[65%] mx-auto flex flex-col items-center justify-between group"
+      className="my-8 sm:my-10 md:my-12 first:mt-0 last:mb-0 w-[98%] sm:w-[75%] md:w-[65%] mx-0 md:mx-auto flex flex-col items-center justify-between group"
     >
       <LiIcon reference={ref} />
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, type: 'spring', damping: 10 }}
-        className="w-full bg-card rounded-lg shadow-lg p-6 border border-border/20 hover:shadow-xl transition-all duration-300"
+        className="w-full bg-card rounded-lg shadow-lg p-4 sm:p-5 md:p-6 border border-border/20 hover:shadow-xl transition-all duration-300"
       >
-        <div className="mb-4">
-          <h3 className="capitalize font-bold text-2xl text-card-foreground/85 mb-2 group-hover:text-darken transition-colors duration-300">
+        <div className="mb-3 sm:mb-3.5 md:mb-4">
+          <h3 className="capitalize font-bold text-xl sm:text-xl md:text-2xl text-card-foreground/85 mb-2 group-hover:text-darken transition-colors duration-300">
             {degree}
           </h3>
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-lg font-semibold text-primary">@</span>
-            <span className="text-primary font-semibold text-lg">{school}</span>
+            <span className="text-base sm:text-lg md:text-lg font-semibold text-primary-light">
+              @
+            </span>
+            <span className="text-primary-light font-semibold text-base sm:text-lg md:text-lg">
+              {school}
+            </span>
           </div>
-          <div className="flex flex-wrap gap-4 text-sm text-muted-foreground font-medium transition-colors duration-300">
+          <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-4 text-xs sm:text-sm md:text-sm text-muted-foreground font-medium transition-colors duration-300">
             <span className="flex items-center gap-1">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path
@@ -57,22 +61,22 @@ const Details = ({
           </div>
         </div>
 
-        <div className="mb-4">
-          <p className="font-medium text-card-foreground/85 leading-relaxed text-justify transition-colors duration-300">
+        <div className="mb-3 sm:mb-3.5 md:mb-4">
+          <p className="font-medium text-sm sm:text-base md:text-base text-card-foreground/85 leading-relaxed text-justify transition-colors duration-300">
             {description}
           </p>
         </div>
 
         {achievements && achievements.length > 0 && (
-          <div className="mb-4">
-            <h4 className="font-semibold text-card-foreground mb-2 text-sm uppercase tracking-wide transition-colors duration-300">
+          <div className="mb-0">
+            <h4 className="font-semibold text-card-foreground mb-2 text-xs sm:text-sm md:text-sm uppercase tracking-wide transition-colors duration-300">
               Key Achievements
             </h4>
             <ul className="list-disc list-inside space-y-1">
               {achievements.map((achievement, index) => (
                 <li
                   key={index}
-                  className="text-muted-foreground text-sm leading-relaxed transition-colors duration-300"
+                  className="text-muted-foreground text-xs sm:text-sm md:text-sm leading-relaxed transition-colors duration-300"
                 >
                   {achievement}
                 </li>
@@ -93,21 +97,21 @@ const Education = () => {
   })
 
   return (
-    <div className="my-64 text-foreground transition-colors duration-300">
+    <div className="my-32 sm:my-48 md:my-64 text-foreground transition-colors duration-300">
       <motion.h2
-        className="font-bold text-6xl w-full text-center mb-32 transition-colors duration-300"
+        className="font-bold text-4xl sm:text-5xl md:text-6xl w-full text-center mb-16 sm:mb-24 md:mb-32 transition-colors duration-300"
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
         Education
       </motion.h2>
-      <div ref={ref} className="w-[80%] mx-auto relative">
+      <div ref={ref} className="w-[95%] sm:w-[85%] md:w-[80%] mx-auto relative">
         <motion.div
-          className="absolute left-9 top-0 w-[4px] h-full bg-gradient-to-b from-primary to-primaryDark origin-top rounded-full shadow-sm"
+          className="absolute left-[-12px] sm:left-[28px] md:left-[45px] top-0 w-[2px] sm:w-[3px] md:w-[4px] h-full bg-gradient-to-b from-primary-light/60 to-white/10 origin-top rounded-full shadow-md shadow-primary/20"
           style={{ scaleY: scrollYProgress }}
         />
-        <ul className="w-full flex flex-col items-start justify-between ml-4">
+        <ul className="w-full flex flex-col items-start justify-between ml-0">
           <Details
             degree="Bachelor of Science (Honours) in Computing and Information Systems"
             school="Sabaragamuwa University of Sri Lanka"
@@ -127,7 +131,9 @@ const Education = () => {
               <>
                 Advanced Level in Physical Science
                 <br />
-                <span className="normal-case">(with Information Technology)</span>
+                <span className="normal-case">
+                  (with Information Technology)
+                </span>
               </>
             }
             school="D.S. Senanayake National School"
