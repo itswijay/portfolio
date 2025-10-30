@@ -48,12 +48,12 @@ const about = () => {
               alt="Pubudu Wijesundara"
               size="lg"
             />
-            <div className="col-span-1 md:col-span-2 flex flex-col items-center md:items-end justify-around text-foreground/85 transition-colors duration-300">
+            <div className="col-span-1 md:col-span-2 flex flex-col items-center md:items-end justify-center md:justify-around py-6 md:py-0 text-foreground/85 transition-colors duration-300">
               <div className="flex flex-col items-center justify-center">
-                <span className="inline-block text-5xl font-bold mb-1">
+                <span className="inline-block text-4xl sm:text-5xl md:text-5xl font-bold mb-2">
                   <AnimatedNumbers value={15} />+
                 </span>
-                <h2 className="text-xl font-medium capitalize text-muted-foreground transition-colors duration-300">
+                <h2 className="text-lg sm:text-xl md:text-xl font-medium capitalize text-muted-foreground transition-colors duration-300">
                   Projects Completed
                 </h2>
               </div>
