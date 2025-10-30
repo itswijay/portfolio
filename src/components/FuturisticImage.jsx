@@ -3,10 +3,10 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 const sizeClasses = {
-  sm: 'w-48 h-48 sm:w-56 h-56 md:w-64 md:h-64', // Responsive: 192px -> 224px -> 256px
-  md: 'w-56 h-56 sm:w-64 h-64 md:w-80 md:h-80', // Responsive: 224px -> 256px -> 320px
-  lg: 'w-64 h-64 sm:w-80 h-80 md:w-96 md:h-96', // Responsive: 256px -> 320px -> 384px
-  xl: 'w-80 h-80 sm:w-96 h-96 md:w-120 md:h-120', // Responsive: 320px -> 384px -> 480px
+  sm: 'w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64', // Responsive: 192px -> 224px -> 256px
+  md: 'w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80', // Responsive: 224px -> 256px -> 320px
+  lg: 'w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96', // Responsive: 256px -> 320px -> 384px
+  xl: 'w-80 h-80 sm:w-96 sm:h-96 md:w-120 md:h-120', // Responsive: 320px -> 384px -> 480px
 }
 
 export default function FuturisticImage({
@@ -19,7 +19,7 @@ export default function FuturisticImage({
 }) {
   return (
     <motion.div
-      className="col-span-1 md:col-span-3 p-4 sm:p-6 md:p-8 flex items-center justify-center transition-colors duration-600"
+      className="col-span-1 md:col-span-3 p-4 sm:p-6 md:p-8 flex items-center justify-center md:block transition-colors duration-600"
       initial={{ opacity: 0, x: 20 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8 }}
