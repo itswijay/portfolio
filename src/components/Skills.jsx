@@ -71,29 +71,29 @@ const Skills = () => {
     <>
       <AnimatedText
         text="Skills & Expertise"
-        className="text-5xl text-center mb-16 mt-20"
+        className="text-3xl sm:text-4xl md:text-5xl text-center mb-8 sm:mb-12 md:mb-16 mt-12 sm:mt-16 md:mt-20"
       />
 
       <motion.div
-        className="w-full max-w-6xl mx-auto px-8"
+        className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-12">
           {skills.map((skillCategory) => (
             <motion.div
               key={skillCategory.category}
-              className="bg-card border border-border rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-card border border-border rounded-2xl p-6 sm:p-7 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300"
               variants={categoryVariants}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -5 }}
             >
-              <h3 className="text-2xl font-bold text-card-foreground mb-6 text-center transition-colors duration-300">
+              <h3 className="text-xl sm:text-xl md:text-2xl font-bold text-card-foreground mb-4 sm:mb-5 md:mb-6 text-center transition-colors duration-300">
                 {skillCategory.category}
               </h3>
 
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-3.5 md:space-y-4">
                 {skillCategory.technologies.map((tech, techIndex) => (
                   <motion.div
                     key={tech.name}
@@ -167,7 +167,6 @@ const Skills = () => {
                 whileTap={{ scale: 0.98 }}
               >
                 <span className="relative z-10 block px-6 py-2 bg-card/80 backdrop-blur-sm text-card-foreground rounded-full text-sm font-medium border border-border/50 cursor-pointer transition-all duration-300 group-hover:text-primary group-hover:border-primary/50 group-hover:shadow-lg group-hover:shadow-primary/10">
-                  
                   {/* Background gradient on hover */}
                   <span className="absolute inset-0 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
 
