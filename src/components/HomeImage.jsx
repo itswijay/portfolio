@@ -17,6 +17,29 @@ const HomeImage = ({ className = '' }) => {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const [lastInteractionTime, setLastInteractionTime] = useState(Date.now())
   const [isHovered, setIsHovered] = useState(false)
+  const [offsetMultiplier, setOffsetMultiplier] = useState(55) // Default to desktop value
+  const [mounted, setMounted] = useState(false)
+
+  // Set mounted state and calculate offset multiplier on client side
+  useEffect(() => {
+    setMounted(true)
+
+    const updateOffsetMultiplier = () => {
+      const width = window.innerWidth
+      if (width < 640) {
+        setOffsetMultiplier(30) // Mobile
+      } else if (width >= 640 && width < 1024) {
+        setOffsetMultiplier(40) // Tablet
+      } else {
+        setOffsetMultiplier(55) // Desktop
+      }
+    }
+
+    updateOffsetMultiplier()
+    window.addEventListener('resize', updateOffsetMultiplier)
+
+    return () => window.removeEventListener('resize', updateOffsetMultiplier)
+  }, [])
 
   // Auto-play functionality
   useEffect(() => {
@@ -77,14 +100,6 @@ const HomeImage = ({ className = '' }) => {
     }
 
     const absDiff = Math.abs(normalizedDiff)
-
-    // Responsive offset values based on screen size
-    const isMobile = typeof window !== 'undefined' && window.innerWidth < 640
-    const isTablet =
-      typeof window !== 'undefined' &&
-      window.innerWidth >= 640 &&
-      window.innerWidth < 1024
-    const offsetMultiplier = isMobile ? 30 : isTablet ? 40 : 55
 
     return {
       zIndex: totalCards - absDiff,
