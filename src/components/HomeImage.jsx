@@ -78,11 +78,19 @@ const HomeImage = () => {
 
     const absDiff = Math.abs(normalizedDiff)
 
+    // Responsive offset values based on screen size
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 640
+    const isTablet =
+      typeof window !== 'undefined' &&
+      window.innerWidth >= 640 &&
+      window.innerWidth < 1024
+    const offsetMultiplier = isMobile ? 30 : isTablet ? 40 : 55
+
     return {
       zIndex: totalCards - absDiff,
       scale: 1 - absDiff * 0.16, // Progressive size reduction for all cards
-      y: -absDiff * 55, // Upward movement
-      x: -absDiff * 55, // Leftward movement
+      y: -absDiff * offsetMultiplier, // Responsive upward movement
+      x: -absDiff * offsetMultiplier, // Responsive leftward movement
       opacity: Math.max(0.4, 1 - absDiff * 0.12), // Keep minimum 40% opacity for all cards
       blur: absDiff * 0.6, // Minimal blur to keep all cards clear
       rotateY: normalizedDiff * 1.2, // Subtle rotation
@@ -91,20 +99,20 @@ const HomeImage = () => {
 
   return (
     <motion.div
-      className="w-1/2 flex justify-center items-center relative"
+      className="w-full md:w-1/2 flex justify-center items-center relative"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
     >
       <div
         id="image-gallery-container"
-        className="relative w-full h-[500px] flex items-center justify-center perspective-1000"
+        className="relative w-full h-[300px] sm:h-[350px] md:h-[450px] lg:h-[500px] flex items-center justify-center perspective-1000"
         style={{ perspective: '1200px' }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* Cards Stack */}
-        <div className="relative w-[450px] h-[300px]">
+        <div className="relative w-[280px] h-[200px] sm:w-[340px] sm:h-[240px] md:w-[400px] md:h-[280px] lg:w-[450px] lg:h-[300px]">
           {images.map((image, index) => {
             const style = getCardStyle(index)
             const isActive = index === currentIndex
@@ -159,7 +167,7 @@ const HomeImage = () => {
         </div>
 
         {/* Indicators */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex gap-2 z-50">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 z-50">
           {images.map((_, index) => (
             <button
               key={index}
@@ -168,9 +176,9 @@ const HomeImage = () => {
                 setLastInteractionTime(Date.now())
                 setCurrentIndex(index)
               }}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${
                 index === currentIndex
-                  ? 'bg-blue-500 w-8'
+                  ? 'bg-blue-500 w-6 sm:w-8'
                   : 'bg-gray-400 dark:bg-gray-600 hover:bg-gray-500'
               }`}
               aria-label={`Go to image ${index + 1}`}
@@ -180,7 +188,7 @@ const HomeImage = () => {
 
         {/* Scroll Hint */}
         <motion.div
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 text-sm text-gray-500 dark:text-gray-400 flex items-center gap-2"
+          className="hidden sm:flex absolute bottom-10 md:bottom-12 left-1/2 -translate-x-1/2 text-sm text-gray-500 dark:text-gray-400 items-center gap-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 1 }}

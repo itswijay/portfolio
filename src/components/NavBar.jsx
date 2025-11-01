@@ -7,12 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import { ThemeToggle } from './ThemeToggle'
 
-const SidebarLink = ({
-  href,
-  title,
-  onClick,
-  delay,
-}) => {
+const SidebarLink = ({ href, title, onClick, delay }) => {
   const pathname = usePathname()
   const isActive = pathname.asPath === href
 
@@ -66,11 +61,7 @@ const SidebarLink = ({
   )
 }
 
-const CustomLink = ({
-  href,
-  title,
-  className = '',
-}) => {
+const CustomLink = ({ href, title, className = '' }) => {
   const pathname = usePathname()
   const isActive = pathname.asPath === href
 
@@ -225,6 +216,29 @@ const NavBar = () => {
           >
             <div className="flex flex-col h-full justify-between pt-6 pb-6 px-6">
               <div>
+                {/* Close Button */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="flex justify-end mb-4"
+                >
+                  <button
+                    onClick={closeMenu}
+                    className="relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-muted/50 transition-all duration-200 group"
+                    aria-label="Close menu"
+                  >
+                    <motion.div
+                      whileHover={{ rotate: 90 }}
+                      transition={{ duration: 0.2 }}
+                      className="relative"
+                    >
+                      <span className="absolute w-5 h-0.5 bg-foreground rounded-full transform rotate-45" />
+                      <span className="absolute w-5 h-0.5 bg-foreground rounded-full transform -rotate-45" />
+                    </motion.div>
+                  </button>
+                </motion.div>
+
                 {/* Theme Toggle in Sidebar */}
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}

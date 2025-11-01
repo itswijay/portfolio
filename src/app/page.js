@@ -9,24 +9,24 @@ export default function Home() {
   return (
     <>
       <main className="flex w-full min-h-screen bg-background text-foreground m-0 p-0 transition-colors duration-300">
-        <Layout className="!pt-2">
-          <div className="flex items-center justify-between w-full">
+        <Layout className="pt-4 md:!pt-2">
+          <div className="flex flex-col md:flex-row items-center justify-between w-full gap-8 md:gap-0">
             <HomeImage />
-            <div className="w-1/2 flex flex-col items-center self-center">
+            <div className="w-full md:w-1/2 flex flex-col items-center self-center">
               <h1></h1>
               <AnimatedText
                 text="Building ideas into reality, with precision and purpose."
-                className="text-left text-xl md:text-3xl lg:text-5xl"
+                className="text-left text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-5xl"
               />
-              <p className="my-4 text-base font-medium text-muted-foreground">
+              <p className="my-3 sm:my-4 md:my-5 text-sm sm:text-base md:text-base lg:text-lg font-medium text-muted-foreground text-justify">
                 A skilled full-stack developer passionate about transforming
                 complex problems into simple, scalable, and impactful solutions.
                 Dedicated to clean code and creative design, delivering digital
                 experiences that truly matter.
               </p>
-              <div className="flex items-center self-start mt-2">
+              <div className="flex flex-col sm:flex-row items-center sm:items-center self-start mt-2 gap-3 sm:gap-0 w-full sm:w-auto">
                 <Link
-                  className="flex items-center bg-foreground text-background p-2 px-4 rounded-lg text-md font-semibold border-2 border-solid border-transparent hover:border-foreground hover:bg-background hover:text-foreground transition-all duration-300"
+                  className="flex items-center justify-center bg-foreground text-background p-2.5 px-5 sm:p-2 sm:px-4 rounded-lg text-sm sm:text-md font-semibold border-2 border-solid border-transparent hover:border-foreground hover:bg-background hover:text-foreground transition-all duration-300 w-full sm:w-auto"
                   href="/Intern_SE.pdf"
                   target="_blank"
                   download={false}
@@ -35,7 +35,7 @@ export default function Home() {
                   <LinkArrow className="ml-1 w-5.5" />
                 </Link>
                 <Link
-                  className="text-lg underline capitalize text-foreground hover:text-primary ml-4 transition-colors duration-300"
+                  className="text-base sm:text-lg underline capitalize text-foreground hover:text-primary sm:ml-4 transition-colors duration-300"
                   href="mailto:pubuduwijes@gmail.com"
                   target="_blank"
                 >
