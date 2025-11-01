@@ -1,27 +1,76 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import NavBar from "@/components/NavBar";
-import Footer from "@/components/Footer";
-import PageLoader from "@/components/PageLoader";
-import { ThemeProvider } from "@/components/ThemeProvider";
+import { Geist, Geist_Mono } from 'next/font/google'
+import './globals.css'
+import NavBar from '@/components/NavBar'
+import Footer from '@/components/Footer'
+import PageLoader from '@/components/PageLoader'
+import { ThemeProvider } from '@/components/ThemeProvider'
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial'],
+})
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  fallback: ['ui-monospace', 'monospace'],
+})
 
 export const metadata = {
   title: 'Pubudu Wijesundara - Portfolio',
-  description: 'Full Stack Developer Portfolio',
+  description:
+    'Full Stack Developer Portfolio - DevOps enthusiast, full-stack developer, and tech educator specializing in React, Next.js, Django, and cloud technologies.',
+  keywords: [
+    'Full Stack Developer',
+    'Web Developer',
+    'DevOps',
+    'React',
+    'Next.js',
+    'Portfolio',
+    'Pubudu Wijesundara',
+  ],
+  authors: [{ name: 'Pubudu Wijesundara' }],
+  creator: 'Pubudu Wijesundara',
+  publisher: 'Pubudu Wijesundara',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon-16x16.png',
     apple: '/apple-touch-icon.png',
+  },
+  openGraph: {
+    title: 'Pubudu Wijesundara - Full Stack Developer',
+    description: 'Full Stack Developer Portfolio',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pubudu Wijesundara - Full Stack Developer',
+    description: 'Full Stack Developer Portfolio',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'google-site-verification-code', // Add your verification code
   },
 }
 
