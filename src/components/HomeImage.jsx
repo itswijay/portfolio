@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 
-const HomeImage = () => {
+const HomeImage = ({ className = '' }) => {
   // Array of images for the gallery
   const images = [
     { src: '/images/home/1.jpg', alt: 'Pubudu Wijesundara - Profile 1' },
@@ -99,7 +99,7 @@ const HomeImage = () => {
 
   return (
     <motion.div
-      className="w-full md:w-1/2 flex justify-center items-center relative"
+      className={`w-full md:w-1/2 flex justify-center items-center relative ${className}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}

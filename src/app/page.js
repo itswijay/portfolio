@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <main className="flex w-full min-h-screen bg-background text-foreground m-0 p-0 transition-colors duration-300">
-        <Layout className="pt-4 md:!pt-2">
+        <Layout className="!pt-2">
           <div className="flex flex-col md:flex-row items-center justify-between w-full gap-8 md:gap-0">
             <HomeImage />
             <div className="w-full md:w-1/2 flex flex-col items-center self-center">
