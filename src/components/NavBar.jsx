@@ -243,11 +243,11 @@ const NavBar = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 }}
+                  transition={{ delay: 0.2 }}
                   className="flex justify-center mb-6"
                 >
                   <div className="p-2 rounded-xl bg-muted/30 border border-border backdrop-blur-sm shadow-md">
-                    {/* <ThemeToggle /> */}
+                    <ThemeToggle />
                   </div>
                 </motion.div>
 

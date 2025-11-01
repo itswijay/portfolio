@@ -40,9 +40,9 @@ export function ThemeToggle() {
         className="absolute inset-0 flex items-center justify-center"
       >
         {theme === 'dark' ? (
-          <SunIcon className="w-5 h-5 text-muted-foreground" />
-        ) : (
           <MoonIcon className="w-5 h-5 text-muted-foreground" />
+        ) : (
+          <SunIcon className="w-5 h-5 text-muted-foreground" />
         )}
       </motion.div>
 
