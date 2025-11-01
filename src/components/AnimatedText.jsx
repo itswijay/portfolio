@@ -29,7 +29,7 @@ const singleWord = {
   },
 }
 
-const AnimatedText = ({ text, className }) => {
+const AnimatedText = React.memo(({ text, className }) => {
   return (
     <div className="w-full mx-auto py-2 items-center justify-center text-center overflow-hidden">
       <motion.h1
@@ -50,6 +50,8 @@ const AnimatedText = ({ text, className }) => {
       </motion.h1>
     </div>
   )
-}
+})
+
+AnimatedText.displayName = 'AnimatedText'
 
 export default AnimatedText

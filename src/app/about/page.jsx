@@ -1,11 +1,30 @@
+import dynamic from 'next/dynamic'
 import AnimatedText from '@/components/AnimatedText'
 import FuturisticImage from '@/components/FuturisticImage'
 import Layout from '@/components/Layout'
 import Head from 'next/head'
-import Skills from '@/components/Skills'
-import Experiences from '@/components/Experiences'
-import Education from '@/components/Education'
 import AnimatedNumbers from '@/components/AnimateNumbers'
+
+// Lazy load heavy components
+const Skills = dynamic(() => import('@/components/Skills'), {
+  loading: () => (
+    <div className="h-96 w-full animate-pulse bg-muted/20 rounded-2xl" />
+  ),
+  ssr: true,
+})
+
+const Education = dynamic(() => import('@/components/Education'), {
+  loading: () => (
+    <div className="h-96 w-full animate-pulse bg-muted/20 rounded-2xl" />
+  ),
+  ssr: true,
+})
+
+// Commented out for now
+// const Experiences = dynamic(() => import('@/components/Experiences'), {
+//   loading: () => <div className="h-96 w-full animate-pulse bg-muted/20 rounded-2xl" />,
+//   ssr: true,
+// })
 
 const about = () => {
   return (
