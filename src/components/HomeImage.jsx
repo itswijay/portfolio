@@ -172,8 +172,9 @@ const HomeImage = ({ className = '' }) => {
                     alt={image.alt}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 500px"
-                    priority={index < 2}
+                    sizes="(max-width: 640px) 280px, (max-width: 768px) 340px, (max-width: 1024px) 400px, 450px"
+                    priority={index === 0}
+                    loading={index === 0 ? 'eager' : 'lazy'}
                   />
                 </div>
               </motion.div>

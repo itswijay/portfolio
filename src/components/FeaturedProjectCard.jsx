@@ -55,7 +55,7 @@ const FeaturedProjectCard = ({
             height={600}
             alt={title}
             className="w-full h-full object-cover block"
-            priority
+            loading="lazy"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
 
