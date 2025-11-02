@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Logo from './Logo'
 import { GitHubIcon, LinkedinIcon } from './Icons'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -9,13 +9,17 @@ import { ThemeToggle } from './ThemeToggle'
 
 const SidebarLink = ({ href, title, onClick, delay }) => {
   const pathname = usePathname()
-  const isActive = pathname === href
+  const [isActive, setIsActive] = useState(false)
+
+  useEffect(() => {
+    setIsActive(pathname === href)
+  }, [pathname, href])
 
   return (
     <motion.div
       initial={{ opacity: 0, x: 50 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ delay }}
+      transition={{ delay, duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
     >
       <Link
         href={href}
@@ -63,7 +67,11 @@ const SidebarLink = ({ href, title, onClick, delay }) => {
 
 const CustomLink = ({ href, title, className = '' }) => {
   const pathname = usePathname()
-  const isActive = pathname === href
+  const [isActive, setIsActive] = useState(false)
+
+  useEffect(() => {
+    setIsActive(pathname === href)
+  }, [pathname, href])
 
   return (
     <Link
@@ -198,7 +206,7 @@ const NavBar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
+            className="fixed inset-0 bg-black/60 z-40 md:hidden"
             onClick={closeMenu}
           />
         )}
@@ -211,8 +219,11 @@ const NavBar = () => {
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
-            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="fixed top-0 right-0 h-full w-80 bg-background/98 backdrop-blur-xl border-l border-border/50 shadow-2xl shadow-black/10 z-50 md:hidden"
+            transition={{ 
+              duration: 0.4,
+              ease: [0.25, 0.1, 0.25, 1]
+            }}
+            className="fixed top-0 right-0 h-full w-80 bg-background/95 backdrop-blur-xs border-l border-border/50 shadow-2xl shadow-black/10 z-50 md:hidden will-change-transform"
           >
             <div className="flex flex-col h-full justify-between pt-6 pb-6 px-6">
               <div>
@@ -220,7 +231,7 @@ const NavBar = () => {
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 }}
+                  transition={{ delay: 0.1, duration: 0.2 }}
                   className="flex justify-end mb-4"
                 >
                   <button
@@ -243,10 +254,10 @@ const NavBar = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
+                  transition={{ delay: 0.2, duration: 0.3 }}
                   className="flex justify-center mb-6"
                 >
-                  <div className="p-2 rounded-xl bg-muted/30 border border-border backdrop-blur-sm shadow-md">
+                  <div className="p-2 rounded-xl bg-muted/30 border border-border backdrop-blur-xs shadow-md">
                     <ThemeToggle />
                   </div>
                 </motion.div>
@@ -284,7 +295,7 @@ const NavBar = () => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
+                transition={{ delay: 0.2, duration: 0.2 }}
                 className="flex flex-col space-y-4 pt-6"
               >
                 {/* Divider */}
@@ -295,7 +306,7 @@ const NavBar = () => {
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 0.7 }}
+                    transition={{ delay: 0.25, duration: 0.2 }}
                     className="text-sm text-muted-foreground mb-3 font-medium"
                   >
                     Connect with me
@@ -303,7 +314,7 @@ const NavBar = () => {
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.8 }}
+                    transition={{ delay: 0.3, duration: 0.2 }}
                     className="flex justify-center space-x-6 mb-4"
                   >
                     <motion.a
@@ -334,7 +345,7 @@ const NavBar = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.9 }}
+                  transition={{ delay: 0.35, duration: 0.2 }}
                   className="text-center"
                 >
                   <p className="text-xs text-muted-foreground/60 font-medium">
