@@ -9,7 +9,7 @@ import { ThemeToggle } from './ThemeToggle'
 
 const SidebarLink = ({ href, title, onClick, delay }) => {
   const pathname = usePathname()
-  const isActive = pathname.asPath === href
+  const isActive = pathname === href
 
   return (
     <motion.div
@@ -63,7 +63,7 @@ const SidebarLink = ({ href, title, onClick, delay }) => {
 
 const CustomLink = ({ href, title, className = '' }) => {
   const pathname = usePathname()
-  const isActive = pathname.asPath === href
+  const isActive = pathname === href
 
   return (
     <Link

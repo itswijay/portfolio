@@ -1,26 +1,9 @@
-import dynamic from 'next/dynamic'
 import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/Layout'
 import Head from 'next/head'
 import React from 'react'
-
-// Lazy load project card components
-const ProjectCard = dynamic(() => import('@/components/ProjectCard'), {
-  loading: () => (
-    <div className="h-64 w-full animate-pulse bg-muted/20 rounded-2xl" />
-  ),
-  ssr: true,
-})
-
-const FeaturedProjectCard = dynamic(
-  () => import('@/components/FeaturedProjectCard'),
-  {
-    loading: () => (
-      <div className="h-96 w-full animate-pulse bg-muted/20 rounded-2xl" />
-    ),
-    ssr: true,
-  }
-)
+import ProjectCard from '@/components/ProjectCard'
+import FeaturedProjectCard from '@/components/FeaturedProjectCard'
 
 const projects = () => {
   return (
