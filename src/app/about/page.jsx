@@ -5,7 +5,7 @@ import Head from 'next/head'
 import AnimatedNumbers from '@/components/AnimateNumbers'
 import Skills from '@/components/Skills'
 import Education from '@/components/Education'
-// import Experiences from '@/components/Experiences'
+import Experiences from '@/components/Experiences'
 
 const about = () => {
   return (
@@ -60,7 +60,7 @@ const about = () => {
             </div>
           </div>
           <Skills />
-          {/* <Experiences /> */}
+          <Experiences />
           <Education />
         </Layout>
       </main>
