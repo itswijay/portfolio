@@ -8,7 +8,7 @@ const LiIcon = ({ reference }) => {
   })
 
   return (
-    <figure className="absolute left-[-37px] sm:left-[-42px] md:left-[9px] stroke-foreground transition-colors duration-300">
+    <figure className="absolute left-[-36px] sm:left-[-42px] md:left-[9px] stroke-foreground transition-colors duration-300">
       <svg
         className="-rotate-90 !mt-0 w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[75px] md:h-[75px]"
         width="75"
