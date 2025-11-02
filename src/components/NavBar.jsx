@@ -125,7 +125,7 @@ const NavBar = () => {
             <CustomLink href="/" title="Home" />
             <CustomLink href="/about" title="About" />
             <CustomLink href="/projects" title="Projects" />
-            <CustomLink href="/articles" title="Articles" />
+            {/* <CustomLink href="/articles" title="Articles" /> */}
           </div>
         </motion.nav>
 
@@ -271,12 +271,12 @@ const NavBar = () => {
                     onClick={closeMenu}
                     delay={0.3}
                   />
-                  <SidebarLink
+                  {/* <SidebarLink
                     href="/articles"
                     title="Articles"
                     onClick={closeMenu}
                     delay={0.4}
-                  />
+                  /> */}
                 </div>
               </div>
 
