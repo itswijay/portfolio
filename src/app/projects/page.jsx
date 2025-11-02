@@ -35,7 +35,7 @@ const projects = () => {
                 type="Full-Stack"
                 title="Next.js Markdown Blog"
                 summary="A blog platform built with Next.js, Markdown, and Tailwind CSS. Supports dynamic routing, SEO optimization, and Vercel deployment."
-                img="/projects/gpa_cal.png"
+                img="/projects/blog.png"
                 link="#"
                 github="#"
                 index={1}
