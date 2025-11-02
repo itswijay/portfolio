@@ -127,6 +127,14 @@ const Education = () => {
           />
 
           <Details
+            degree="Diploma in Graphic Design"
+            school="design.lk"
+            time="2021 – 2022"
+            address="Sri Lanka"
+            description="Completed a comprehensive diploma program focusing on visual communication and digital design. Gained hands-on expertise in Adobe Photoshop, Illustrator, and InDesign, along with a solid understanding of design principles and artwork creation. These creative skills complement my technical expertise, enabling me to build visually compelling and user-centered digital experiences."
+          />
+
+          <Details
             degree={
               <>
                 Advanced Level in Physical Science
