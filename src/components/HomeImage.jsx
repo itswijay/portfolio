@@ -174,7 +174,8 @@ const HomeImage = ({ className = '' }) => {
                     className="object-cover"
                     sizes="(max-width: 640px) 280px, (max-width: 768px) 340px, (max-width: 1024px) 400px, 450px"
                     priority={index === 0}
-                    loading={index === 0 ? 'eager' : 'lazy'}
+                    loading={index === 0 ? undefined : 'lazy'}
+                    fetchPriority={index === 0 ? 'high' : 'low'}
                   />
                 </div>
               </motion.div>
