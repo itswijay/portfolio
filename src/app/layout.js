@@ -22,9 +22,13 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata = {
+  metadataBase: new URL('https://www.itswijay.me'),
   title: 'Pubudu Wijesundara - Portfolio',
   description:
     'Full Stack Developer Portfolio - DevOps enthusiast, full-stack developer, and tech educator specializing in React, Next.js, Django, and cloud technologies.',
+  alternates: {
+    canonical: 'https://www.itswijay.me/',
+  },
   keywords: [
     'Full Stack Developer',
     'Web Developer',
