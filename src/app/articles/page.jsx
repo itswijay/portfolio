@@ -1,8 +1,10 @@
 import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/Layout'
-import BlogCard from '@/components/BlogCard'
-import { getLatestBlogs, getPopularBlogs } from '@/lib/blogs'
+import BlogCardSkeleton from '@/components/BlogCardSkeleton'
+import LatestBlogPosts from '@/components/LatestBlogPosts'
+import PopularBlogPosts from '@/components/PopularBlogPosts'
 import Link from 'next/link'
+import { Suspense } from 'react'
 
 export const metadata = {
   title: 'Articles | Pubudu Wijesundara',
@@ -15,11 +17,7 @@ export const metadata = {
   },
 }
 
-const articles = async () => {
-  // Fetch blog posts from the API
-  const latestPosts = await getLatestBlogs(6)
-  const popularPosts = await getPopularBlogs(6)
-
+const articles = () => {
   return (
     <main className="w-full mb-16 flex flex-col items-center justify-center overflow-hidden bg-background text-foreground transition-colors duration-300">
       <Layout className="pt-16">
@@ -59,19 +57,17 @@ const articles = async () => {
             </Link>
           </div>
 
-          {latestPosts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {latestPosts.map((post, index) => (
-                <BlogCard key={post.slug} post={post} index={index} />
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-12">
-              <p className="text-muted-foreground text-lg">
-                No articles found. Check back soon!
-              </p>
-            </div>
-          )}
+          <Suspense
+            fallback={
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {Array.from({ length: 6 }).map((_, index) => (
+                  <BlogCardSkeleton key={index} />
+                ))}
+              </div>
+            }
+          >
+            <LatestBlogPosts />
+          </Suspense>
         </section>
 
         {/* Most Popular Posts Section */}
@@ -87,19 +83,17 @@ const articles = async () => {
             </div>
           </div>
 
-          {popularPosts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {popularPosts.map((post, index) => (
-                <BlogCard key={post.slug} post={post} index={index} />
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-12">
-              <p className="text-muted-foreground text-lg">
-                No popular posts available yet.
-              </p>
-            </div>
-          )}
+          <Suspense
+            fallback={
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {Array.from({ length: 6 }).map((_, index) => (
+                  <BlogCardSkeleton key={index} />
+                ))}
+              </div>
+            }
+          >
+            <PopularBlogPosts />
+          </Suspense>
         </section>
 
         {/* Mobile "View all" link */}
