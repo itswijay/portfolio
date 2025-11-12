@@ -28,6 +28,14 @@ async function fetchBlogPosts(endpoint, limit = 6) {
     const data = await response.json()
 
     if (data.success && data.posts) {
+      console.log(`Fetched ${data.posts.length} posts from ${endpoint}`)
+      console.log(
+        'First post:',
+        data.posts[0]?.title,
+        'Views:',
+        data.posts[0]?.views
+      )
+
       // Transform the posts to include the full blog URL
       return data.posts.map((post) => ({
         ...post,
@@ -57,7 +65,15 @@ export async function GET(request) {
     if (type === 'latest') {
       posts = await fetchBlogPosts('/latest', limit)
     } else if (type === 'popular') {
+      console.log('Fetching popular posts...')
       posts = await fetchBlogPosts('/popular', limit)
+      console.log(`Received ${posts.length} popular posts`)
+      if (posts.length > 0) {
+        console.log(
+          'Popular posts order:',
+          posts.slice(0, 3).map((p) => ({ title: p.title, views: p.views }))
+        )
+      }
     } else if (type === 'all') {
       posts = await fetchBlogPosts('', limit)
     } else {
