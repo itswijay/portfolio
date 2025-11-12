@@ -3,7 +3,11 @@
  * These functions are designed for server-side use in Next.js 15
  */
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+// Use production URL in production, localhost in development
+const API_BASE_URL =
+  process.env.NODE_ENV === 'production'
+    ? 'https://itswijay.me'
+    : 'http://localhost:3000'
 
 /**
  * Fetch blog posts from the API
