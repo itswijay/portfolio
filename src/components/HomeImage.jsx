@@ -3,15 +3,18 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 
+// Array of images for the gallery
+const GALLERY_IMAGES = [
+  { src: '/images/home/1.jpg', alt: 'Pubudu Wijesundara - Profile 1' },
+  { src: '/images/home/2.jpg', alt: 'Pubudu Wijesundara - Profile 2' },
+  { src: '/images/home/3.jpg', alt: 'Pubudu Wijesundara - Profile 3' },
+  { src: '/images/home/4.jpg', alt: 'Pubudu Wijesundara - Profile 4' },
+  { src: '/images/home/5.jpg', alt: 'Pubudu Wijesundara - Profile 5' },
+  { src: '/images/home/6.jpg', alt: 'Pubudu Wijesundara - Profile 6' },
+]
+
 const HomeImage = ({ className = '' }) => {
-  // Array of images for the gallery
-  const images = [
-    { src: '/images/home/1.jpg', alt: 'Pubudu Wijesundara - Profile 1' },
-    { src: '/images/home/2.jpg', alt: 'Pubudu Wijesundara - Profile 1' },
-    { src: '/images/home/3.jpg', alt: 'Pubudu Wijesundara - Profile 2' },
-    { src: '/images/home/4.jpg', alt: 'profile 3' },
-    { src: '/images/home/5.jpg', alt: 'profile 3' },
-  ]
+  const images = GALLERY_IMAGES
 
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
@@ -50,7 +53,7 @@ const HomeImage = ({ className = '' }) => {
     }, 4000)
 
     return () => clearInterval(interval)
-  }, [isAutoPlaying, isHovered, images.length])
+  }, [isAutoPlaying, isHovered])
 
   // Resume auto-play after 3 seconds of inactivity
   useEffect(() => {
