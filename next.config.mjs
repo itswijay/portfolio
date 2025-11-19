@@ -2,6 +2,7 @@
 const nextConfig = {
   // Performance Optimizations
   reactStrictMode: true,
+  poweredByHeader: false, // Remove X-Powered-By header for security
 
   // Image Optimization
   images: {
@@ -27,13 +28,12 @@ const nextConfig = {
         : false,
   },
 
-  // Performance profiling (optional - enable when needed)
-  // experimental: {
-  //   optimizeCss: true,
-  //   webpackBuildWorker: true,
-  // },
+  // Experimental optimizations for better performance
+  experimental: {
+    optimizePackageImports: ['framer-motion', 'lucide-react'],
+  },
 
-  // Headers for caching
+  // Headers for caching and security
   async headers() {
     return [
       {
@@ -51,6 +51,27 @@ const nextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'origin-when-cross-origin',
           },
         ],
       },
