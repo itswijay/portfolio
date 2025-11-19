@@ -26,12 +26,19 @@ export const metadata = {
       'Building solutions, sharing knowledge, and creating impact through technology. Learn about my journey as a full-stack developer and DevOps enthusiast.',
     type: 'profile',
     url: 'https://www.itswijay.me/about',
+    images: [
+      {
+        url: '/logos/logo.png',
+        alt: 'Pubudu Wijesundara Logo',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About | Pubudu Wijesundara - Full Stack Developer',
     description:
       'Building solutions, sharing knowledge, and creating impact through technology.',
+    images: ['/logos/logo.png'],
   },
 }
 

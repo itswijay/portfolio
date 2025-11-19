@@ -26,12 +26,19 @@ export const metadata = {
       'Portfolio of Pubudu Wijesundara - Building ideas into reality with precision and purpose. Skilled in full-stack development, DevOps, and cloud technologies.',
     type: 'website',
     url: 'https://www.itswijay.me',
+    images: [
+      {
+        url: '/logos/logo.png',
+        alt: 'Pubudu Wijesundara Logo',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Pubudu Wijesundara - Full Stack Developer & DevOps Engineer',
     description:
       'Portfolio of Pubudu Wijesundara - Building ideas into reality with precision and purpose.',
+    images: ['/logos/logo.png'],
   },
 }
 

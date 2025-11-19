@@ -25,12 +25,19 @@ export const metadata = {
       'Imagination Trumps Knowledge! Explore innovative projects including AI healthcare solutions, blog platforms, and web applications.',
     type: 'website',
     url: 'https://www.itswijay.me/projects',
+    images: [
+      {
+        url: '/logos/logo.png',
+        alt: 'Pubudu Wijesundara Logo',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Projects | Pubudu Wijesundara - Full Stack Developer Portfolio',
     description:
       'Explore innovative projects including AI healthcare solutions, blog platforms, and web applications.',
+    images: ['/logos/logo.png'],
   },
 }
 

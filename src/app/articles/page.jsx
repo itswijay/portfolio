@@ -25,12 +25,19 @@ export const metadata = {
       'Words can change the world! Explore latest articles and most popular blog posts about Technology, DevOps, Cyber Security, and web development.',
     type: 'website',
     url: 'https://www.itswijay.me/articles',
+    images: [
+      {
+        url: '/logos/logo.png',
+        alt: 'Pubudu Wijesundara Logo',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Articles | Pubudu Wijesundara - Tech Blog & DevOps Insights',
     description:
       'Explore latest articles and blog posts about Technology, DevOps, Cyber Security, and web development.',
+    images: ['/logos/logo.png'],
   },
 }
 
