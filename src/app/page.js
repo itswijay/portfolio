@@ -5,6 +5,7 @@ import { LinkArrow } from '@/components/Icons'
 import HireMe from '@/components/HireMe'
 import HomeImage from '@/components/HomeImage'
 import StructuredData from '@/components/StructuredData'
+import SmoothScroll from '@/components/SmoothScroll'
 
 export const metadata = {
   title: 'Pubudu Wijesundara - Full Stack Developer & DevOps Engineer',
@@ -88,6 +89,7 @@ export default function Home() {
 
   return (
     <>
+    <SmoothScroll />
       <StructuredData data={personSchema} />
       <StructuredData data={websiteSchema} />
       <main className="flex w-full min-h-screen bg-background text-foreground m-0 p-0 transition-colors duration-300">

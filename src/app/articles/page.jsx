@@ -6,6 +6,7 @@ import PopularBlogPosts from '@/components/PopularBlogPosts'
 import Link from 'next/link'
 import { Suspense } from 'react'
 import StructuredData from '@/components/StructuredData'
+import SmoothScroll from '@/components/SmoothScroll'
 
 export const metadata = {
   title: 'Articles | Pubudu Wijesundara - Tech Blog & DevOps Insights',
@@ -67,6 +68,7 @@ const articles = () => {
 
   return (
     <>
+    <SmoothScroll />
       <StructuredData data={blogSchema} />
       <main className="w-full mb-16 flex flex-col items-center justify-center overflow-hidden bg-background text-foreground transition-colors duration-300">
         <Layout className="pt-16">

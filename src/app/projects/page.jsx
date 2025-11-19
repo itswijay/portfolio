@@ -4,6 +4,7 @@ import React from 'react'
 import ProjectCard from '@/components/ProjectCard'
 import FeaturedProjectCard from '@/components/FeaturedProjectCard'
 import StructuredData from '@/components/StructuredData'
+import SmoothScroll from '@/components/SmoothScroll'
 
 export const metadata = {
   title: 'Projects | Pubudu Wijesundara - Full Stack Developer Portfolio',
@@ -79,6 +80,7 @@ const projects = () => {
 
   return (
     <>
+      <SmoothScroll />
       <StructuredData data={itemListSchema} />
       <main className="w-full mb-16 flex flex-col items-center justify-center">
         <Layout>

@@ -6,6 +6,7 @@ import Skills from '@/components/Skills'
 import Education from '@/components/Education'
 import Experiences from '@/components/Experiences'
 import StructuredData from '@/components/StructuredData'
+import SmoothScroll from '@/components/SmoothScroll'
 
 export const metadata = {
   title: 'About | Pubudu Wijesundara - Full Stack Developer',
@@ -69,6 +70,7 @@ const about = () => {
 
   return (
     <>
+    <SmoothScroll />
       <StructuredData data={profilePageSchema} />
       <main className="flex w-full flex-col items-center justify-center">
         <Layout className="pt-8">
