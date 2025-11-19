@@ -3,6 +3,7 @@ import Layout from '@/components/Layout'
 import React from 'react'
 import ProjectCard from '@/components/ProjectCard'
 import FeaturedProjectCard from '@/components/FeaturedProjectCard'
+import StructuredData from '@/components/StructuredData'
 
 export const metadata = {
   title: 'Projects | Pubudu Wijesundara - Full Stack Developer Portfolio',
@@ -42,8 +43,40 @@ export const metadata = {
 }
 
 const projects = () => {
+  const itemListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: [
+      {
+        '@type': 'CreativeWork',
+        position: 1,
+        name: 'Intima - AI Healthcare Bot',
+        description:
+          'A conversational AI bot that provides guidance on sexual, obstetrics, and gynecology healthcare topics.',
+        url: 'https://github.com/thewijay/Intima_Front-End',
+      },
+      {
+        '@type': 'CreativeWork',
+        position: 2,
+        name: 'Blog Platform',
+        description:
+          'Full-featured blog platform built with modern web technologies.',
+        url: 'https://blog.itswijay.me',
+      },
+      {
+        '@type': 'CreativeWork',
+        position: 3,
+        name: 'Portfolio Website',
+        description:
+          'Personal portfolio website showcasing projects and skills.',
+        url: 'https://www.itswijay.me',
+      },
+    ],
+  }
+
   return (
     <>
+      <StructuredData data={itemListSchema} />
       <Head>
         <title>Projects Page</title>
         <meta name="description" content="" />

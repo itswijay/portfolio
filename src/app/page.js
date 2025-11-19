@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { LinkArrow } from '@/components/Icons'
 import HireMe from '@/components/HireMe'
 import HomeImage from '@/components/HomeImage'
+import StructuredData from '@/components/StructuredData'
 
 export const metadata = {
   title: 'Pubudu Wijesundara - Full Stack Developer & DevOps Engineer',
@@ -43,8 +44,49 @@ export const metadata = {
 }
 
 export default function Home() {
+  const personSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Pubudu Wijesundara',
+    url: 'https://www.itswijay.me',
+    image: 'https://www.itswijay.me/logos/logo.png',
+    jobTitle: 'Full Stack Developer & DevOps Engineer',
+    description:
+      'A skilled full-stack developer passionate about transforming complex problems into simple, scalable solutions.',
+    email: 'pubuduwijes@gmail.com',
+    sameAs: [
+      'https://github.com/thewijay',
+      'https://www.linkedin.com/in/pubudu-wijesundara',
+      'https://blog.itswijay.me',
+    ],
+    knowsAbout: [
+      'Full Stack Development',
+      'DevOps',
+      'React',
+      'Next.js',
+      'Django',
+      'Web Development',
+      'Cloud Technologies',
+    ],
+  }
+
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Pubudu Wijesundara Portfolio',
+    url: 'https://www.itswijay.me',
+    description:
+      'Portfolio of Pubudu Wijesundara - Full Stack Developer & DevOps Engineer',
+    author: {
+      '@type': 'Person',
+      name: 'Pubudu Wijesundara',
+    },
+  }
+
   return (
     <>
+      <StructuredData data={personSchema} />
+      <StructuredData data={websiteSchema} />
       <main className="flex w-full min-h-screen bg-background text-foreground m-0 p-0 transition-colors duration-300">
         <Layout className="!pt-2">
           <div className="flex flex-col md:flex-row items-center justify-between w-full gap-8 md:gap-0">

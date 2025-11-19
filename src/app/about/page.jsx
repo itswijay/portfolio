@@ -5,6 +5,7 @@ import AnimatedNumbers from '@/components/AnimateNumbers'
 import Skills from '@/components/Skills'
 import Education from '@/components/Education'
 import Experiences from '@/components/Experiences'
+import StructuredData from '@/components/StructuredData'
 
 export const metadata = {
   title: 'About | Pubudu Wijesundara - Full Stack Developer',
@@ -43,12 +44,29 @@ export const metadata = {
 }
 
 const about = () => {
+  const profilePageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    dateCreated: '2024-01-01',
+    dateModified: new Date().toISOString(),
+    mainEntity: {
+      '@type': 'Person',
+      name: 'Pubudu Wijesundara',
+      alternateName: 'Wijay',
+      description:
+        "DevOps enthusiast, full-stack developer, and tech educator who loves exploring new technologies and sharing knowledge.",
+      image: 'https://www.itswijay.me/logos/logo.png',
+      sameAs: [
+        'https://github.com/thewijay',
+        'https://www.linkedin.com/in/pubudu-wijesundara',
+        'https://blog.itswijay.me',
+      ],
+    },
+  }
+
   return (
     <>
-      <Head>
-        <title>About</title>
-        <meta name="description" content="" />
-      </Head>
+      <StructuredData data={profilePageSchema} />
       <main className="flex w-full flex-col items-center justify-center">
         <Layout className="pt-8">
           <AnimatedText
