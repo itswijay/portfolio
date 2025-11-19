@@ -117,7 +117,7 @@ const Education = () => {
             school="Sabaragamuwa University of Sri Lanka"
             time="2023 – Present"
             address="Belihuloya, Sri Lanka"
-            description="Pursuing a rigorous undergraduate degree with a strong foundation in computer science, software engineering, and information systems. Developing hands-on expertise in full-stack development, AI integration, database design, and modern web technologies through academic coursework and real-world projects."
+            description="Pursuing a comprehensive undergraduate degree with a strong foundation in computer science, software engineering, and information systems. Developing hands-on expertise in full-stack development, AI integration, database design, and modern web technologies through academic coursework and real-world projects."
             achievements={[
               'Developing an AI-based sexual and wellness healthcare assistant as the final-year capstone project',
               'Volunteered in coding and technology workshops organized by the STEMUp Educational Foundation',
