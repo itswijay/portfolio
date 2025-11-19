@@ -1,0 +1,15 @@
+# robots.txt for www.itswijay.me
+# This file tells search engines which pages they can crawl
+
+# Allow all bots to crawl everything
+User-agent: *
+Allow: /
+
+# Disallow crawling of API routes (if any)
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://www.itswijay.me/sitemap.xml
+
+# Crawl-delay (optional - prevents overwhelming your server)
+# Crawl-delay: 1
