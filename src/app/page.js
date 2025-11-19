@@ -27,7 +27,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row items-center sm:items-center self-start mt-2 gap-3 sm:gap-0 w-full sm:w-auto">
                 <Link
                   className="flex items-center justify-center bg-foreground text-background p-2.5 px-5 sm:p-2 sm:px-4 rounded-lg text-sm sm:text-md font-semibold border-2 border-solid border-transparent hover:border-foreground hover:bg-background hover:text-foreground transition-all duration-300 w-full sm:w-auto"
-                  href="/Intern_SE.pdf"
+                  href="/Pubudu-Wijesundara-Software-Engineer-Intern.pdf"
                   target="_blank"
                   download={false}
                 >
