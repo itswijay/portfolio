@@ -1,11 +1,39 @@
 import AnimatedText from '@/components/AnimatedText'
 import FuturisticImage from '@/components/FuturisticImage'
 import Layout from '@/components/Layout'
-import Head from 'next/head'
 import AnimatedNumbers from '@/components/AnimateNumbers'
 import Skills from '@/components/Skills'
 import Education from '@/components/Education'
 import Experiences from '@/components/Experiences'
+
+export const metadata = {
+  title: 'About | Pubudu Wijesundara - Full Stack Developer',
+  description:
+    "Learn about Pubudu Wijesundara's journey as a DevOps enthusiast, full-stack developer, and tech educator. Discover skills, experience, and educational background in software engineering and web development.",
+  keywords: [
+    'About Pubudu Wijesundara',
+    'Software Engineer',
+    'DevOps',
+    'Full Stack Developer',
+    'Biography',
+    'Skills',
+    'Experience',
+    'Education',
+  ],
+  openGraph: {
+    title: 'About | Pubudu Wijesundara - Full Stack Developer',
+    description:
+      'Building solutions, sharing knowledge, and creating impact through technology. Learn about my journey as a full-stack developer and DevOps enthusiast.',
+    type: 'profile',
+    url: 'https://www.itswijay.me/about',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About | Pubudu Wijesundara - Full Stack Developer',
+    description:
+      'Building solutions, sharing knowledge, and creating impact through technology.',
+  },
+}
 
 const about = () => {
   return (

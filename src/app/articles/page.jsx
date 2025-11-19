@@ -7,13 +7,30 @@ import Link from 'next/link'
 import { Suspense } from 'react'
 
 export const metadata = {
-  title: 'Articles | Pubudu Wijesundara',
+  title: 'Articles | Pubudu Wijesundara - Tech Blog & DevOps Insights',
   description:
-    'Explore my latest articles and most popular blog posts about Technology, DevOps, Cyber Security, and web development.',
+    'Explore latest articles and most popular blog posts by Pubudu Wijesundara about Technology, DevOps, Cyber Security, and web development. Stay updated with industry insights and tutorials.',
+  keywords: [
+    'Tech Articles',
+    'DevOps Blog',
+    'Cyber Security',
+    'Web Development',
+    'Technology Blog',
+    'Programming Tutorials',
+    'Pubudu Wijesundara Blog',
+  ],
   openGraph: {
-    title: 'Articles | Pubudu Wijesundara',
+    title: 'Articles | Pubudu Wijesundara - Tech Blog & DevOps Insights',
     description:
-      'Explore my latest articles and most popular blog posts about Technology, DevOps, Cyber Security, and web development.',
+      'Words can change the world! Explore latest articles and most popular blog posts about Technology, DevOps, Cyber Security, and web development.',
+    type: 'website',
+    url: 'https://www.itswijay.me/articles',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Articles | Pubudu Wijesundara - Tech Blog & DevOps Insights',
+    description:
+      'Explore latest articles and blog posts about Technology, DevOps, Cyber Security, and web development.',
   },
 }
 

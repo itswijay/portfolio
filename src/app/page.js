@@ -5,6 +5,36 @@ import { LinkArrow } from '@/components/Icons'
 import HireMe from '@/components/HireMe'
 import HomeImage from '@/components/HomeImage'
 
+export const metadata = {
+  title: 'Pubudu Wijesundara - Full Stack Developer & DevOps Engineer',
+  description:
+    'Portfolio of Pubudu Wijesundara - A skilled full-stack developer passionate about transforming complex problems into simple, scalable solutions. Specializing in React, Next.js, Django, DevOps, and modern web development.',
+  keywords: [
+    'Pubudu Wijesundara',
+    'Full Stack Developer',
+    'DevOps Engineer',
+    'Web Developer',
+    'React Developer',
+    'Next.js',
+    'Django',
+    'Portfolio',
+    'Software Engineer',
+  ],
+  openGraph: {
+    title: 'Pubudu Wijesundara - Full Stack Developer & DevOps Engineer',
+    description:
+      'Portfolio of Pubudu Wijesundara - Building ideas into reality with precision and purpose. Skilled in full-stack development, DevOps, and cloud technologies.',
+    type: 'website',
+    url: 'https://www.itswijay.me',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pubudu Wijesundara - Full Stack Developer & DevOps Engineer',
+    description:
+      'Portfolio of Pubudu Wijesundara - Building ideas into reality with precision and purpose.',
+  },
+}
+
 export default function Home() {
   return (
     <>

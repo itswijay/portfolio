@@ -1,9 +1,38 @@
 import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/Layout'
-import Head from 'next/head'
 import React from 'react'
 import ProjectCard from '@/components/ProjectCard'
 import FeaturedProjectCard from '@/components/FeaturedProjectCard'
+
+export const metadata = {
+  title: 'Projects | Pubudu Wijesundara - Full Stack Developer Portfolio',
+  description:
+    'Explore projects by Pubudu Wijesundara including AI healthcare apps, blog platforms, GPA calculators, and portfolio websites. Built with React, Next.js, Django, and modern web technologies.',
+  keywords: [
+    'Projects',
+    'Portfolio Projects',
+    'Web Development Projects',
+    'React Projects',
+    'Next.js Projects',
+    'Django Projects',
+    'AI Projects',
+    'Full Stack Projects',
+    'Pubudu Wijesundara',
+  ],
+  openGraph: {
+    title: 'Projects | Pubudu Wijesundara - Full Stack Developer Portfolio',
+    description:
+      'Imagination Trumps Knowledge! Explore innovative projects including AI healthcare solutions, blog platforms, and web applications.',
+    type: 'website',
+    url: 'https://www.itswijay.me/projects',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Projects | Pubudu Wijesundara - Full Stack Developer Portfolio',
+    description:
+      'Explore innovative projects including AI healthcare solutions, blog platforms, and web applications.',
+  },
+}
 
 const projects = () => {
   return (
