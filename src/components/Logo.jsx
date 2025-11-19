@@ -24,7 +24,7 @@ const Logo = () => {
         <Link href="/" className="relative block w-full h-full">
           <Image
             src={logoSrc}
-            alt="Logo"
+            alt="Pubudu Wijesundara - Portfolio Logo"
             fill
             className="object-contain transition-opacity duration-200 hover:opacity-90"
             sizes="(max-width: 768px) 48px, 64px"

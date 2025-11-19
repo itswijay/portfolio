@@ -5,6 +5,8 @@ export const LinkedinIcon = ({ className, ...rest }) => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     className={className}
+    aria-label="LinkedIn Profile"
+    role="img"
     {...rest}
   >
     <path
@@ -19,6 +21,8 @@ export const GitHubIcon = ({ className, ...rest }) => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     className={className}
+    aria-label="GitHub Profile"
+    role="img"
     {...rest}
   >
     <path
@@ -33,6 +37,8 @@ export const LinkArrow = ({ className, ...rest }) => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     className={className}
+    aria-label="External Link"
+    role="img"
     {...rest}
   >
     <g fill="none">
@@ -55,6 +61,8 @@ export const SunIcon = ({ className, ...rest }) => (
     strokeLinecap="round"
     strokeLinejoin="round"
     className={className}
+    aria-label="Light Mode"
+    role="img"
     {...rest}
   >
     <circle cx="12" cy="12" r="5" />
@@ -72,6 +80,8 @@ export const MoonIcon = ({ className, ...rest }) => (
     strokeLinecap="round"
     strokeLinejoin="round"
     className={className}
+    aria-label="Dark Mode"
+    role="img"
     {...rest}
   >
     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
