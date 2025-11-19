@@ -21,6 +21,9 @@ export const metadata = {
     'Portfolio',
     'Software Engineer',
   ],
+  alternates: {
+    canonical: 'https://www.itswijay.me',
+  },
   openGraph: {
     title: 'Pubudu Wijesundara - Full Stack Developer & DevOps Engineer',
     description:

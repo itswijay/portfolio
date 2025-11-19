@@ -21,6 +21,9 @@ export const metadata = {
     'Experience',
     'Education',
   ],
+  alternates: {
+    canonical: 'https://www.itswijay.me/about',
+  },
   openGraph: {
     title: 'About | Pubudu Wijesundara - Full Stack Developer',
     description:

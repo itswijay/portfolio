@@ -20,6 +20,9 @@ export const metadata = {
     'Full Stack Projects',
     'Pubudu Wijesundara',
   ],
+  alternates: {
+    canonical: 'https://www.itswijay.me/projects',
+  },
   openGraph: {
     title: 'Projects | Pubudu Wijesundara - Full Stack Developer Portfolio',
     description:

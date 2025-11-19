@@ -20,6 +20,9 @@ export const metadata = {
     'Programming Tutorials',
     'Pubudu Wijesundara Blog',
   ],
+  alternates: {
+    canonical: 'https://www.itswijay.me/articles',
+  },
   openGraph: {
     title: 'Articles | Pubudu Wijesundara - Tech Blog & DevOps Insights',
     description:
