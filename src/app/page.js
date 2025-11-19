@@ -92,7 +92,6 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-between w-full gap-8 md:gap-0">
             <HomeImage />
             <div className="w-full md:w-1/2 flex flex-col items-center self-center">
-              <h1></h1>
               <AnimatedText
                 text="Building ideas into reality, with precision and purpose."
                 className="text-left text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-5xl"

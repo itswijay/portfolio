@@ -54,7 +54,7 @@ const about = () => {
       name: 'Pubudu Wijesundara',
       alternateName: 'Wijay',
       description:
-        "DevOps enthusiast, full-stack developer, and tech educator who loves exploring new technologies and sharing knowledge.",
+        'DevOps enthusiast, full-stack developer, and tech educator who loves exploring new technologies and sharing knowledge.',
       image: 'https://www.itswijay.me/logos/logo.png',
       sameAs: [
         'https://github.com/thewijay',
@@ -73,8 +73,11 @@ const about = () => {
             text="Building solutions, sharing knowledge, and creating impact through technology."
             className="!mb-6 md:!mb-8 !text-lg sm:!text-xl md:!text-2xl"
           />
-          <div className="grid w-full grid-cols-1 md:grid-cols-8 gap-8 md:gap-16">
-            <div className="col-span-1 md:col-span-3 flex flex-col items-start justify-start">
+          <section
+            className="grid w-full grid-cols-1 md:grid-cols-8 gap-8 md:gap-16"
+            aria-label="Biography and statistics"
+          >
+            <article className="col-span-1 md:col-span-3 flex flex-col items-start justify-start">
               <h2 className="mb-3 md:mb-4 text-base md:text-lg font-bold uppercase text-foreground/80 transition-colors duration-300">
                 Biography
               </h2>
@@ -95,13 +98,13 @@ const about = () => {
                 goal is to continue growing as a developer while helping others
                 discover the joy of building with code.
               </p>
-            </div>
+            </article>
             <FuturisticImage
               src="/profile/4.png"
               alt="Pubudu Wijesundara"
               size="lg"
             />
-            <div className="col-span-1 md:col-span-2 flex flex-col items-center md:items-end justify-center md:justify-around py-6 md:py-0 text-foreground/85 transition-colors duration-300">
+            <aside className="col-span-1 md:col-span-2 flex flex-col items-center md:items-end justify-center md:justify-around py-6 md:py-0 text-foreground/85 transition-colors duration-300">
               <div className="flex flex-col items-center justify-center">
                 <span className="inline-block text-4xl sm:text-5xl md:text-5xl font-bold mb-2">
                   <AnimatedNumbers value={15} />+
@@ -110,8 +113,8 @@ const about = () => {
                   Projects Completed
                 </h2>
               </div>
-            </div>
-          </div>
+            </aside>
+          </section>
           <Skills />
           <Experiences />
           <Education />
