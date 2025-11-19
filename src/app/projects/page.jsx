@@ -56,7 +56,7 @@ const projects = () => {
         name: 'Intima - AI Healthcare Bot',
         description:
           'A conversational AI bot that provides guidance on sexual, obstetrics, and gynecology healthcare topics.',
-        url: 'https://github.com/thewijay/Intima_Front-End',
+        url: 'https://github.com/itswijay/Intima_Front-End',
       },
       {
         '@type': 'CreativeWork',
@@ -96,8 +96,8 @@ const projects = () => {
                 title="Intima"
                 summary="A conversational AI bot that provides guidance on sexual, obstetrics, and gynecology healthcare topics. Built with vector databases and OpenAI API."
                 img="/projects/intima.png"
-                link="https://github.com/thewijay/Intima_Front-End"
-                github="https://github.com/thewijay/Intima_Front-End"
+                link="https://github.com/itswijay/Intima_Front-End"
+                github="https://github.com/itswijay/Intima_Front-End"
                 index={0}
               />
             </article>
@@ -107,8 +107,8 @@ const projects = () => {
                 title="Next.js Markdown Blog"
                 summary="A blog platform built with Next.js, Markdown, and Tailwind CSS. Supports dynamic routing, SEO optimization, and Vercel deployment."
                 img="/projects/blog.png"
-                link="#"
-                github="#"
+                link="https://blog.itswijay.me"
+                github="https://blog.itswijay.me"
                 index={1}
               />
             </article>
@@ -119,7 +119,7 @@ const projects = () => {
                 summary="A modern, responsive portfolio website built with Next.js and Tailwind CSS. Features dark/light mode, project showcase, and smooth animations."
                 img="/projects/portfolio.png"
                 link="https://itswijay.vercel.app"
-                github="https://github.com/thewijay/portfolio"
+                github="https://github.com/itswijay/portfolio"
                 index={2}
               />
             </article>
@@ -130,7 +130,7 @@ const projects = () => {
                 summary="Dockerized medical management system for university Medical Center built with Laravel, MySQL and phpMyAdmin. Features automated migrations & seeding, container orchestration, and documented local & production deployment workflows."
                 img="/projects/medi-track.png"
                 link="#"
-                github="https://github.com/thewijay/meditrack-susl"
+                github="https://github.com/itswijay/meditrack-susl"
                 index={4}
               />
             </article>
@@ -141,7 +141,7 @@ const projects = () => {
                 summary="A lightweight web app that lets university students calculate GPA instantly. Auto-loads courses based on degree & semester with data stored locally in browser."
                 img="/projects/gpa_cal.png"
                 link="https://gpacalsusl.vercel.app"
-                github="https://github.com/thewijay/gpa-cal"
+                github="https://github.com/itswijay/gpa-cal"
                 index={5}
               />
             </article>
