@@ -61,7 +61,7 @@ const about = () => {
         'DevOps enthusiast, full-stack developer, and tech educator who loves exploring new technologies and sharing knowledge.',
       image: 'https://www.itswijay.me/logos/logo.png',
       sameAs: [
-        'https://github.com/thewijay',
+        'https://github.com/itswijay',
         'https://www.linkedin.com/in/pubudu-wijesundara',
         'https://blog.itswijay.me',
       ],
