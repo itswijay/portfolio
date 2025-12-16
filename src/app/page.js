@@ -2,7 +2,7 @@ import Layout from '@/components/Layout'
 import AnimatedText from '@/components/AnimatedText'
 import Link from 'next/link'
 import { LinkArrow } from '@/components/Icons'
-import HireMe from '@/components/HireMe'
+import ConnectOnWhatsApp from '@/components/ConnectOnWhatsApp'
 import HomeImage from '@/components/HomeImage'
 import StructuredData from '@/components/StructuredData'
 import SmoothScroll from '@/components/SmoothScroll'
@@ -89,7 +89,7 @@ export default function Home() {
 
   return (
     <>
-    <SmoothScroll />
+      <SmoothScroll />
       <StructuredData data={personSchema} />
       <StructuredData data={websiteSchema} />
       <main className="flex w-full min-h-screen bg-background text-foreground m-0 p-0 transition-colors duration-300">
@@ -128,7 +128,7 @@ export default function Home() {
             </div>
           </div>
         </Layout>
-        <HireMe />
+        <ConnectOnWhatsApp />
       </main>
     </>
   )

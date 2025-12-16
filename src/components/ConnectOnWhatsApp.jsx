@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 
-const HireMe = () => {
+const ConnectOnWhatsApp = () => {
   const [isExpanded, setIsExpanded] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
 
@@ -91,4 +91,4 @@ const HireMe = () => {
   )
 }
 
-export default HireMe
+export default ConnectOnWhatsApp
