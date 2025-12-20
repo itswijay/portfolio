@@ -107,22 +107,42 @@ export default function Home() {
                 Dedicated to clean code and creative design, delivering digital
                 experiences that truly matter.
               </p>
-              <div className="flex flex-col sm:flex-row items-center sm:items-center self-start mt-2 gap-3 sm:gap-0 w-full sm:w-auto">
+              <div className="flex flex-col gap-4 mt-2 w-full">
+                <div className="flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-3 w-full sm:w-auto">
+                  <Link
+                    className="flex items-center justify-center bg-foreground text-background p-2.5 px-4 sm:p-2 sm:px-3 rounded-lg text-xs sm:text-sm font-semibold border-2 border-solid border-transparent hover:border-foreground hover:bg-background hover:text-foreground transition-all duration-300 w-full sm:w-auto whitespace-nowrap"
+                    href="/Pubudu-Wijesundara-Software-Engineer-Intern.pdf"
+                    target="_blank"
+                    download
+                  >
+                    SE Intern
+                    <LinkArrow className="ml-1 w-4.5" />
+                  </Link>
+                  <Link
+                    className="flex items-center justify-center bg-foreground text-background p-2.5 px-4 sm:p-2 sm:px-3 rounded-lg text-xs sm:text-sm font-semibold border-2 border-solid border-transparent hover:border-foreground hover:bg-background hover:text-foreground transition-all duration-300 w-full sm:w-auto whitespace-nowrap"
+                    href="/Pubudu-Wijesundara-DevOps-Engineer-Intern.pdf"
+                    target="_blank"
+                    download
+                  >
+                    DevOps Intern
+                    <LinkArrow className="ml-1 w-4.5" />
+                  </Link>
+                  <Link
+                    className="flex items-center justify-center bg-foreground text-background p-2.5 px-4 sm:p-2 sm:px-3 rounded-lg text-xs sm:text-sm font-semibold border-2 border-solid border-transparent hover:border-foreground hover:bg-background hover:text-foreground transition-all duration-300 w-full sm:w-auto whitespace-nowrap"
+                    href="/Pubudu-Wijesundara-Quality-Engineer-Intern.pdf"
+                    target="_blank"
+                    download
+                  >
+                    QE Intern
+                    <LinkArrow className="ml-1 w-4.5" />
+                  </Link>
+                </div>
                 <Link
-                  className="flex items-center justify-center bg-foreground text-background p-2.5 px-5 sm:p-2 sm:px-4 rounded-lg text-sm sm:text-md font-semibold border-2 border-solid border-transparent hover:border-foreground hover:bg-background hover:text-foreground transition-all duration-300 w-full sm:w-auto"
-                  href="/Pubudu-Wijesundara-Software-Engineer-Intern.pdf"
-                  target="_blank"
-                  download={false}
-                >
-                  Resume
-                  <LinkArrow className="ml-1 w-5.5" />
-                </Link>
-                <Link
-                  className="text-base sm:text-lg underline capitalize text-foreground hover:text-primary sm:ml-4 transition-colors duration-300"
+                  className="text-base sm:text-lg capitalize text-foreground hover:text-primary transition-colors duration-300"
                   href="mailto:pubuduwijes@gmail.com"
                   target="_blank"
                 >
-                  Contact
+                  CONTACT
                 </Link>
               </div>
             </div>
