@@ -137,7 +137,7 @@ export default function Home() {
                     <LinkArrow className="ml-1 w-4.5" />
                   </Link>
                   <Link
-                    className="flex items-center justify-center bg-primary-light text-background p-2.5 px-4 sm:p-2 sm:px-3 rounded-lg text-xs sm:text-sm font-semibold border-2 border-solid border-transparent hover:border-primary-light hover:bg-background hover:text-primary-light transition-all duration-300 w-full sm:w-auto whitespace-nowrap"
+                    className="flex items-center justify-center bg-primary text-background p-2.5 px-4 sm:p-2 sm:px-3 rounded-lg text-xs sm:text-sm font-semibold border-2 border-solid border-transparent hover:border-primary hover:bg-background hover:text-primary transition-all duration-300 w-full sm:w-auto whitespace-nowrap"
                     href="mailto:pubuduwijes@gmail.com"
                     target="_blank"
                   >
