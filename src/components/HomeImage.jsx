@@ -117,7 +117,7 @@ const HomeImage = ({ className = '' }) => {
 
   return (
     <motion.div
-      className={`w-full md:w-1/2 flex justify-center items-center relative ${className}`}
+      className={`w-full xl:w-1/2 flex justify-center items-center relative ${className}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -208,7 +208,7 @@ const HomeImage = ({ className = '' }) => {
 
         {/* Scroll Hint */}
         <motion.div
-          className="hidden sm:flex absolute bottom-10 md:bottom-12 left-1/2 -translate-x-1/2 text-sm text-gray-500 dark:text-gray-400 items-center gap-2"
+          className="hidden md:flex absolute bottom-10 md:bottom-12 left-1/2 -translate-x-1/2 text-sm text-gray-500 dark:text-gray-400 items-center gap-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 1 }}

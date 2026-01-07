@@ -94,14 +94,14 @@ export default function Home() {
       <StructuredData data={websiteSchema} />
       <main className="flex w-full min-h-screen bg-background text-foreground m-0 p-0 transition-colors duration-300">
         <Layout className="!pt-2">
-          <div className="flex flex-col md:flex-row items-center justify-between w-full gap-8 md:gap-0">
+          <div className="flex flex-col xl:flex-row items-center justify-between w-full gap-8 md:gap-0">
             <HomeImage />
-            <div className="w-full md:w-1/2 flex flex-col items-center self-center">
+            <div className="w-full xl:w-1/2 flex flex-col items-center self-center">
               <AnimatedText
                 text="Building ideas into reality, with precision and purpose."
-                className="text-left text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-5xl"
+                className="text-left text-lg sm:text-xl md:text-xl lg:text-3xl xl:text-5xl"
               />
-              <p className="my-3 sm:my-4 md:my-5 text-sm sm:text-base md:text-base lg:text-lg font-medium text-muted-foreground text-justify">
+              <p className="my-3 sm:my-4 md:my-5 text-sm sm:text-base lg:text-lg font-medium text-muted-foreground text-justify">
                 A skilled full-stack developer passionate about transforming
                 complex problems into simple, scalable, and impactful solutions.
                 Dedicated to clean code and creative design, delivering digital

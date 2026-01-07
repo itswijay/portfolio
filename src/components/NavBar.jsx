@@ -127,7 +127,7 @@ const NavBar = () => {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="hidden md:flex absolute left-[50%] translate-x-[-50%] items-center px-8 py-3 rounded-full backdrop-blur-lg bg-card/40 border border-border/10 shadow-lg shadow-black/[0.03] hover:shadow-xl hover:shadow-black/[0.08] hover:bg-card/50 transition-all duration-500 ring-1 ring-white/5"
+          className="hidden xl:flex absolute left-[50%] translate-x-[-50%] items-center px-8 py-3 rounded-full backdrop-blur-lg bg-card/40 border border-border/10 shadow-lg shadow-black/[0.03] hover:shadow-xl hover:shadow-black/[0.08] hover:bg-card/50 transition-all duration-500 ring-1 ring-white/5"
         >
           <div className="flex items-center space-x-8 lg:space-x-12">
             <CustomLink href="/" title="Home" />
@@ -145,7 +145,7 @@ const NavBar = () => {
             target={'_blank'}
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
-            className="hidden md:flex w-10 h-10 items-center justify-center p-1 rounded-full hover:bg-muted/50 transition-colors duration-200"
+            className="hidden xl:flex w-10 h-10 items-center justify-center p-1 rounded-full hover:bg-muted/50 transition-colors duration-200"
           >
             <LinkedinIcon className="w-full h-full fill-current text-muted-foreground hover:text-foreground transition-colors duration-200" />
           </motion.a>
@@ -155,19 +155,19 @@ const NavBar = () => {
             target={'_blank'}
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
-            className="hidden md:flex w-10 h-10 items-center justify-center p-1 rounded-full hover:bg-muted/50 transition-colors duration-200"
+            className="hidden xl:flex w-10 h-10 items-center justify-center p-1 rounded-full hover:bg-muted/50 transition-colors duration-200"
           >
             <GitHubIcon className="w-full h-full fill-current text-muted-foreground hover:text-foreground transition-colors duration-200" />
           </motion.a>
 
-          <div className="hidden md:block">
+          <div className="hidden xl:block">
             <ThemeToggle />
           </div>
 
           {/* Hamburger Menu - Mobile Only */}
           <button
             onClick={toggleMenu}
-            className="md:hidden relative w-10 h-10 flex flex-col items-center justify-center space-y-1 rounded-full hover:bg-muted/50 transition-colors duration-200 z-50"
+            className="xl:hidden relative w-10 h-10 flex flex-col items-center justify-center space-y-1 rounded-full hover:bg-muted/50 transition-colors duration-200 z-50"
             aria-label="Toggle mobile menu"
           >
             <motion.span
@@ -206,7 +206,7 @@ const NavBar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-black/60 z-40 md:hidden"
+            className="fixed inset-0 bg-black/60 z-40 xl:hidden"
             onClick={closeMenu}
           />
         )}
@@ -223,7 +223,7 @@ const NavBar = () => {
               duration: 0.4,
               ease: [0.25, 0.1, 0.25, 1]
             }}
-            className="fixed top-0 right-0 h-full w-80 bg-background/95 backdrop-blur-xs border-l border-border/50 shadow-2xl shadow-black/10 z-50 md:hidden will-change-transform"
+            className="fixed top-0 right-0 h-full w-80 bg-background/95 backdrop-blur-xs border-l border-border/50 shadow-2xl shadow-black/10 z-50 xl:hidden will-change-transform"
           >
             <div className="flex flex-col h-full justify-between pt-6 pb-6 px-6">
               <div>
