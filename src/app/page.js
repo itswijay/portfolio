@@ -115,10 +115,10 @@ export default function Home() {
                     target="_blank"
                     download
                   >
-                    SE Intern
+                    Resume
                     <LinkArrow className="ml-1 w-4.5" />
                   </Link>
-                  <Link
+                  {/* <Link
                     className="flex items-center justify-center bg-foreground text-background p-2.5 px-4 sm:p-2 sm:px-3 rounded-lg text-xs sm:text-sm font-semibold border-2 border-solid border-transparent hover:border-foreground hover:bg-background hover:text-foreground transition-all duration-300 w-full sm:w-auto whitespace-nowrap"
                     href="/Pubudu-Wijesundara-DevOps-Engineer-Intern.pdf"
                     target="_blank"
@@ -135,7 +135,7 @@ export default function Home() {
                   >
                     QE Intern
                     <LinkArrow className="ml-1 w-4.5" />
-                  </Link>
+                  </Link> */}
                   <Link
                     className="flex items-center justify-center bg-primary text-background p-2.5 px-4 sm:p-2 sm:px-3 rounded-lg text-xs sm:text-sm font-semibold border-2 border-solid border-transparent hover:border-primary hover:bg-background hover:text-primary transition-all duration-300 w-full sm:w-auto whitespace-nowrap"
                     href="mailto:pubuduwijes@gmail.com"
