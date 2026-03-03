@@ -318,7 +318,7 @@ const NavBar = () => {
                     className="flex justify-center space-x-6 mb-4"
                   >
                     <motion.a
-                      href="https://www.linkedin.com/in/pubudu-wijesundara/"
+                      href="https://www.linkedin.com/in/PubuduWijesundara/"
                       target={'_blank'}
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.9 }}
