@@ -141,7 +141,7 @@ const NavBar = () => {
         <div className="flex items-center space-x-4">
           {/* Social Icons - Desktop Only */}
           <motion.a
-            href="https://www.linkedin.com/in/pubudu-wijesundara/"
+            href="https://www.linkedin.com/in/PubuduWijesundara/"
             target={'_blank'}
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
